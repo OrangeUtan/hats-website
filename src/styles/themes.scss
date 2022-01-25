@@ -24,6 +24,7 @@
 
 	--color-divider: rgb(189, 189, 189);
 	--color-skeleton: #{darken($color-bg, 10%)};
+	--color-skeleton-anim: #{darken($color-bg, 15%)};
 }
 
 :global[data-theme='dark'] {
@@ -53,4 +54,5 @@
 
 	--color-divider: #{lighten($color-bg, 10%)};
 	--color-skeleton: #{lighten($color-bg, 10%)};
+	--color-skeleton-anim: #{lighten($color-bg, 15%)};
 }

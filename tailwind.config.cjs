@@ -18,7 +18,8 @@ module.exports = {
 				'on-tooltip': 'var(--color-on-tooltip)',
 				'border-tooltip': 'var(--color-border-tooltip)',
 				divider: 'var(--color-divider)',
-				skeleton: 'var(--color-skeleton)'
+				skeleton: 'var(--color-skeleton)',
+				'skeleton-anim': 'var(--color-skeleton-anim)'
 			},
 			transitionDuration: {
 				theme: 'var(--duration-theme)'
