@@ -23,6 +23,7 @@
 	--color-on-tooltip: var(--color-on-bg);
 
 	--color-divider: rgb(189, 189, 189);
+	--color-skeleton: #{darken($color-bg, 10%)};
 }
 
 :global[data-theme='dark'] {
@@ -51,4 +52,5 @@
 	--color-border-tooltip: #424b55;
 
 	--color-divider: #{lighten($color-bg, 10%)};
+	--color-skeleton: #{lighten($color-bg, 10%)};
 }
