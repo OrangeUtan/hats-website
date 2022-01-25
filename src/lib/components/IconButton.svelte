@@ -15,7 +15,7 @@
 		@apply relative p-2 w-11 h-11;
 
 		&::before {
-			@apply bg-white rounded-3xl opacity-0;
+			@apply bg-white rounded opacity-0;
 			@apply w-full h-full;
 			@apply absolute left-0 top-0;
 			content: '';
