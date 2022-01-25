@@ -4,15 +4,20 @@
 </script>
 
 <nav>
-	<a href="/" class="text-xl flex items-center">
-		<img
-			class="inline-block align-text-top bg-brand rounded-lg p-1"
-			src="/i/favicon.png"
-			alt=""
-			width="35"
-			height="35"
-		/>
-	</a>
+	<div class="left">
+		<a href="/" class="brand">
+			<img
+				class="inline-block align-text-top bg-brand rounded-lg p-1"
+				src="/i/favicon.png"
+				alt=""
+				width="35"
+				height="35"
+			/>
+		</a>
+		<div class="links">
+			<a href="/index">Index</a>
+		</div>
+	</div>
 	<div class="right">
 		<LanguageSwitcher />
 		<ThemeToggle />
@@ -23,6 +28,18 @@
 	nav {
 		@apply flex justify-between w-full;
 		@apply max-w-4xl;
+
+		.left {
+			@apply flex flex-row items-center;
+
+			.brand {
+				@apply text-xl flex items-center mr-4;
+			}
+
+			.links {
+				@apply uppercase;
+			}
+		}
 
 		.right {
 			@apply flex gap-2;
