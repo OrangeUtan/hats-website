@@ -1,62 +1,27 @@
-import { derived, get, writable } from 'svelte/store';
+import { get, writable } from 'svelte/store';
 import type { Writable } from 'svelte/store';
 import { isEmptyObject } from '$lib/utils';
 
-interface HatJson {
+export interface HatJson {
 	type: string;
 	cmd: number;
+	category: string;
+	tags?: string[];
 	lore?: string[];
-	additional_nbt?: Record<string, unknown>;
+	nbt?: Record<string, unknown>;
 }
 
 export interface Hat {
 	type: string;
 	cmd: number;
-	name: string;
+	category: string;
+	tags?: string[];
 	lore?: string[];
-	additional_nbt?: Record<string, unknown>;
+	nbt?: Record<string, unknown>;
+	name: string;
 }
 
-export const categories: Writable<Record<string, Hat[]>> = writable({});
-export const hats = derived(
-	categories,
-	($categories) => {
-		return Object.values($categories).reduce((prev: Record<string, Hat>, curr) => {
-			return { ...prev, ...Object.fromEntries(curr.map((hat) => [hat.type, hat])) };
-		}, {});
-	},
-	{}
-);
-
-export async function fetchCategories(force = false): Promise<Record<string, Hat[]>> {
-	const currentVal = get(categories);
-	if (!force && !isEmptyObject(currentVal)) {
-		return currentVal;
-	}
-
-	const url = 'https://orangeutan.github.io/Hats/api/hats_by_category.json';
-	const res = await fetch(url);
-	const categoriesJson: Record<string, HatJson[]> = await res.json();
-	const data = Object.fromEntries(
-		Object.entries(categoriesJson).map(([category, hats]) => {
-			return [
-				category,
-				hats.map((hatJson) => {
-					return {
-						type: hatJson.type,
-						cmd: hatJson.cmd,
-						name: `item.hats.hat.${hatJson.type}.name`,
-						lore: hatJson.lore,
-						additional_nbt: hatJson.additional_nbt
-					} as Hat;
-				})
-			];
-		})
-	);
-
-	categories.set(data);
-	return data;
-}
+export const hats: Writable<Record<string, Hat>> = writable({});
 
 export async function fetchHats(force = false): Promise<Record<string, Hat>> {
 	const currentVal = get(hats);
@@ -64,8 +29,24 @@ export async function fetchHats(force = false): Promise<Record<string, Hat>> {
 		return currentVal;
 	}
 
-	await fetchCategories((force = true));
-	return get(hats);
+	const url = 'https://orangeutan.github.io/Hats/api/hats.json';
+	const res = await fetch(url);
+	const hatsJson: Record<string, HatJson> = await res.json();
+
+	const hatsData = Object.fromEntries(
+		Object.entries(hatsJson).map(([type, hatJson]) => {
+			return [
+				type,
+				{
+					...hatJson,
+					name: `item.hats.hat.${hatJson.type}.name`
+				}
+			];
+		})
+	);
+
+	hats.set(hatsData);
+	return hatsData;
 }
 
-fetchCategories();
+fetchHats();

@@ -3,16 +3,16 @@
 	import Circle3 from 'svelte-loading-spinners/dist/ts/Circle3.svelte';
 	import HatCard from './HatCard.svelte';
 
-	export let categories: Record<string, Hat[]>;
+	export let groups: Record<string, Hat[]>;
 </script>
 
 <div class="max-w-4xl w-full">
-	{#each Object.entries(categories) as [category, hats] (category)}
+	{#each Object.entries(groups) as [groupName, hats]}
 		<h1 class="category-heading">
-			{category.trim().replace(/^\w/, (c) => c.toUpperCase())}
+			{groupName.trim().replace(/^\w/, (c) => c.toUpperCase())}
 		</h1>
 		<div class="grid gap-4 md:grid-cols-5 sm:grid-cols-4 grid-cols-3 items-start">
-			{#each hats as hat (hat.type)}
+			{#each hats as hat}
 				<HatCard {hat} />
 			{/each}
 		</div>

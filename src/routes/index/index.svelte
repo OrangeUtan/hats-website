@@ -1,37 +1,29 @@
 <script lang="ts">
-	import { categories } from '$stores/hats';
-	import type { Hat } from '$stores/hats';
-	import { language } from '$stores/language';
+	import { Hat, hats } from '$stores/hats';
 	import HatList from '$lib/components/HatList.svelte';
 
-	let searchTerm = '';
-	let filteredCategories = $categories;
+	let groupBy = 'category';
 
-	function hatMatchesSearchTerm(searchTerm: string, hat: Hat) {
-		return (
-			$language[hat.name]?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-			hat.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
-			String(hat.cmd).includes(searchTerm)
-		);
+	function groupByProperty(hats: Record<string, Hat>, prop: string) {
+		return Object.entries(hats).reduce((prev, [type, hat]) => {
+			let keys: string[] = hat[prop];
+			keys = Array.isArray(keys) ? keys : [keys];
+
+			keys.forEach((key) => {
+				if (!prev[key]) prev[key] = [];
+				prev[key].push(hat);
+			});
+
+			return prev;
+		}, {});
 	}
 
-	$: if (searchTerm) {
-		filteredCategories = Object.fromEntries(
-			Object.entries($categories)
-				.map(([category, hats]) => {
-					return [category, hats.filter((hat) => hatMatchesSearchTerm(searchTerm, hat))];
-				})
-				.filter(([_, hats]) => {
-					return Object.keys(hats).length > 0;
-				})
-		);
-	} else {
-		filteredCategories = $categories;
-	}
+	let groups: Record<string, Hat[]> = {};
+	$: groups = groupByProperty($hats, groupBy);
 </script>
 
 <svelte:head>
 	<link rel="stylesheet" href="/i/hatIcons.css" />
 </svelte:head>
 
-<HatList categories={filteredCategories} />
+<HatList {groups} />
