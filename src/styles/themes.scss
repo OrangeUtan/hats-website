@@ -1,0 +1,50 @@
+// Default/fallback theme
+:root {
+	--color-brand: #fb923c;
+
+	$color-bg: white;
+	--color-bg: #{$color-bg};
+	--color-on-bg: #24292f;
+	--color-border: #373e47;
+	--color-theme-toggle: #f5d67b;
+
+	// Code
+	--color-code: #{darken($color-bg, 2%)};
+
+	// Card
+	$color-card: $color-bg;
+	--color-card: #{$color-bg};
+	--color-on-card: var(--color-on-bg);
+	--color-card-title: #{darken($color-card, 7%)};
+	--color-border-card: #{darken($color-card, 10%)};
+
+	// Tooltip
+	--color-tooltip: var(--color-bg);
+	--color-on-tooltip: var(--color-on-bg);
+}
+
+:global[data-theme='dark'] {
+	--color-brand: #fb923c;
+
+	$color-bg: #22272e;
+	--color-bg: #{$color-bg};
+	--color-on-bg: #f3f3f3;
+	--color-border: #424b55;
+	--color-theme-toggle: #9ed5ef;
+
+	// Code
+	--color-code: #{lighten($color-bg, 5%)};
+
+	// Card
+	// $color-card: #2a2f36;
+	$color-card: lighten($color-bg, 5%);
+	--color-card: #{$color-card};
+	--color-on-card: #bebebe;
+	--color-card-title: #{lighten($color-card, 5%)};
+	--color-border-card: #{lighten($color-card, 10%)};
+
+	// Tooltip
+	--color-tooltip: #{lighten($color-bg, 10%)};
+	--color-on-tooltip: var(--color-on-bg);
+	--color-border-tooltip: #424b55;
+}
