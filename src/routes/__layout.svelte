@@ -15,7 +15,7 @@
 	<link rel="icon" type="image/x-icon" href="/i/favicon.png" />
 </svelte:head>
 
-<header class="flex justify-center mx-4 my-4">
+<header class="flex justify-center py-4 px-4">
 	<NavBar />
 </header>
 
@@ -39,7 +39,11 @@
 		--duration-theme: 150ms;
 
 		@apply h-full;
-		@apply bg-bg text-on-bg border-border;
+		@apply bg-bg text-on-bg;
 		@apply transition-colors duration-theme;
 	}
+
+	// :global* {
+	// 	outline: 1px solid yellow;
+	// }
 </style>

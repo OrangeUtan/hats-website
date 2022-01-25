@@ -7,7 +7,7 @@
 	<div class="flex flex-row items-center">
 		<a href="/" class="text-xl flex items-center mr-4">
 			<img
-				class="inline-block align-text-top bg-brand rounded p-1"
+				class="inline-block align-text-top bg-brand rounded p-2 w-11 h-11"
 				src="/i/favicon.png"
 				alt=""
 				width="35"
