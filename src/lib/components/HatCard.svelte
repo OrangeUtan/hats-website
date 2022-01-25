@@ -42,7 +42,7 @@
 >
 	<i class={`hat-icon h-${hat.type} drop-shadow-md`} />
 	<div class="card-title">
-		<h1 class="p-2">{$language[hat.name]}</h1>
+		<h1 class="p-1">{$language[hat.name]}</h1>
 		{#if !areDetailsHidden}
 			<div class="card-details" in:slide={{ delay: 300, duration: 100 }} out:slide={{ duration: 100 }}>
 				<CopyButton text="/give @s" />
