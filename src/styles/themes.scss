@@ -1,7 +1,6 @@
 // Default/fallback theme
 :root {
 	--color-brand: #fb923c;
-	--color-divider: black;
 
 	$color-bg: white;
 	--color-bg: #{$color-bg};
@@ -22,6 +21,8 @@
 	// Tooltip
 	--color-tooltip: var(--color-bg);
 	--color-on-tooltip: var(--color-on-bg);
+
+	--color-divider: rgb(189, 189, 189);
 }
 
 :global[data-theme='dark'] {
