@@ -1,6 +1,7 @@
 // Default/fallback theme
 :root {
 	--color-brand: #fb923c;
+	--color-divider: black;
 
 	$color-bg: white;
 	--color-bg: #{$color-bg};
@@ -47,4 +48,6 @@
 	--color-tooltip: #{lighten($color-bg, 10%)};
 	--color-on-tooltip: var(--color-on-bg);
 	--color-border-tooltip: #424b55;
+
+	--color-divider: #{lighten($color-bg, 10%)};
 }
