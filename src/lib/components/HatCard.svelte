@@ -44,7 +44,7 @@
 	<div class="card-title">
 		<h1 class="p-1">{$language[hat.name]}</h1>
 		{#if !areDetailsHidden}
-			<div class="card-details" in:slide={{ delay: 300, duration: 100 }} out:slide={{ duration: 100 }}>
+			<div class="card-details" in:slide={{ delay: 100, duration: 200 }} out:slide={{ duration: 200 }}>
 				<CopyButton text="/give @s" />
 			</div>
 		{/if}
