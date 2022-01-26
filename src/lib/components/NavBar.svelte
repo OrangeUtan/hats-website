@@ -15,7 +15,7 @@
 			/>
 		</a>
 		<div class="uppercase">
-			<a href="/index">Index</a>
+			<a sveltekit:prefetch href="/index">Index</a>
 		</div>
 	</div>
 	<div class="flex gap-2 text-center">
