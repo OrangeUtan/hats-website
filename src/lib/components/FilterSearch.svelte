@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { createPopperActions } from 'svelte-popperjs';
 	import Tooltip from './Tooltip.svelte';
+	import clearOnKey from '$actions/useClearOnKey';
 
 	export let showFilters;
 	export let placeholder = 'Search...';
@@ -12,13 +13,6 @@
 
 	let filterToggleText;
 	$: filterToggleText = showFilters ? 'Hide filters' : 'Show filters';
-
-	function onInputKeyDown(e: KeyboardEvent) {
-		if (e.key === 'Escape') {
-			e.preventDefault();
-			inputEl.value = '';
-		}
-	}
 </script>
 
 <div class="w-full relative">
@@ -29,7 +23,7 @@
 		autocomplete="on"
 		{placeholder}
 		bind:this={inputEl}
-		on:keydown={onInputKeyDown}
+		use:clearOnKey={'Escape'}
 	/>
 	<button
 		use:tooltipRef
