@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href="/i/hatIcons.css" />
 </svelte:head>
 
-<div class="max-w-4xl w-full">
+<div class="max-w-4xl w-full mt-8">
 	<Search bind:showFilters />
 	{#if showFilters}
 		<div />
