@@ -1,14 +1,26 @@
 <script lang="ts" context="module">
+	import { Hat, hats, updateHatData } from '$stores/hats';
+	import { fetchLanguage } from '$stores/language';
+
 	/**
 	 * @type {import('@sveltejs/kit').Load}
 	 */
 	export async function load({ params, url, fetch, session, context }) {
-		const res = await updateHatData(fetch);
+		const hatsRes = await updateHatData(fetch);
 
-		if (!res.ok) {
+		if (!hatsRes.ok) {
 			return {
-				status: res.status,
+				status: hatsRes.status,
 				error: new Error(`Could not hat data`)
+			};
+		}
+
+		const langRes = await fetchLanguage(fetch, 'en_us');
+
+		if (!langRes.ok) {
+			return {
+				status: hatsRes.status,
+				error: new Error(`Could not load translations`)
 			};
 		}
 
@@ -17,7 +29,6 @@
 </script>
 
 <script lang="ts">
-	import { Hat, hats, updateHatData } from '$stores/hats';
 	import HatList from '$components/HatList.svelte';
 	import Search from '$components/FilterSearch.svelte';
 	let groupBy = 'category';

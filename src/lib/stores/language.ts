@@ -3,16 +3,17 @@ import type { Writable, Readable } from 'svelte/store';
 
 export const languageCode: Writable<string> = writable('en_us');
 
-export const language: Readable<Record<string, string>> = derived(
-	languageCode,
-	($languageCode, set) => {
-		fetchLanguage($languageCode).then(set);
-	},
-	{}
-);
+export const language: Writable<Record<string, string>> = writable({});
 
-const fetchLanguage = async (languageCode: string): Promise<Record<string, string>> => {
+export async function fetchLanguage(fetch: FetchFunction, languageCode: string) {
 	const url = `https://orangeutan.github.io/Hats/api/lang/${languageCode}.json`;
 	const res = await fetch(url);
-	return await res.json();
-};
+
+	if (!res.ok) {
+		return res;
+	}
+
+	language.set(await res.json());
+
+	return res;
+}

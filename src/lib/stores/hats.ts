@@ -23,9 +23,7 @@ export interface Hat {
 
 export const hats: Writable<Record<string, Hat>> = writable({});
 
-export async function updateHatData(
-	fetch: (input: RequestInfo, init?: RequestInit) => Promise<Response>
-): Promise<Response> {
+export async function updateHatData(fetch: FetchFunction): Promise<Response> {
 	const url = 'https://orangeutan.github.io/Hats/api/hats.json';
 	const res = await fetch(url);
 
