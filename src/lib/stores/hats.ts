@@ -21,15 +21,21 @@ export interface Hat {
 	name: string;
 }
 
-export const hats: Writable<Record<string, Hat>> = writable({});
+const hatsStore: Writable<Record<string, Hat>> = writable({});
+export { hatsStore as hats };
 
-/** Fetch and parse hats JSON data **/
+/**
+ * Fetch and parse hats JSON data
+ *
+ * @param fetch - Fetch implementation
+ * @returns Parsed hats data
+ */
 async function fetchHats(fetch: FetchFunction): Promise<Record<string, Hat>> {
 	const url = 'https://orangeutan.github.io/Hats/api/hats.json';
 	const res = await fetch(url);
 
 	if (!res.ok) {
-		throw new Error(`Failed to load hats: ${res.status}`);
+		throw new Error(`Failed to load hats: ${res.statusText}`);
 	}
 
 	const json: Record<string, HatJson> = await res.json();
@@ -57,12 +63,12 @@ async function fetchHats(fetch: FetchFunction): Promise<Record<string, Hat>> {
  * @return Current value of hats store
  **/
 export async function updateHats(fetch: FetchFunction, force = false): Promise<Record<string, Hat>> {
-	const currentValue = get(hats);
+	const currentValue = get(hatsStore);
 	if (!force && !isEmptyObject(currentValue)) {
 		return currentValue;
 	}
 
 	const newValue = await fetchHats(fetch);
-	hats.set(newValue);
+	hatsStore.set(newValue);
 	return newValue;
 }
