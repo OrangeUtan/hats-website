@@ -12,7 +12,8 @@
 
 <svelte:head>
 	<title>Hats Datapack</title>
-	<link rel="icon" type="image/x-icon" href="/i/favicon.png" />
+	<link rel="icon" type="image/svg+xml" href="/i/squid.svg" />
+	<link rel="mask-icon" href="/i/squid.svg" color="blue" />
 </svelte:head>
 
 <header class="flex justify-center py-4 px-4">
