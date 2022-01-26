@@ -19,7 +19,8 @@ module.exports = {
 				'border-tooltip': 'var(--color-border-tooltip)',
 				divider: 'var(--color-divider)',
 				skeleton: 'var(--color-skeleton)',
-				'skeleton-anim': 'var(--color-skeleton-anim)'
+				'skeleton-anim': 'var(--color-skeleton-anim)',
+				'bg-search': 'var(--color-bg-search)'
 			},
 			transitionDuration: {
 				theme: 'var(--duration-theme)'

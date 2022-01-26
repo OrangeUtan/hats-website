@@ -19,7 +19,7 @@
 	<NavBar />
 </header>
 
-<main class="flex justify-center mx-4">
+<main class="flex flex-col items-center mx-4">
 	<slot />
 </main>
 

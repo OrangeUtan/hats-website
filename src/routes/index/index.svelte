@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Hat, hats } from '$stores/hats';
-	import HatList from '$lib/components/HatList.svelte';
-
+	import HatList from '$components/HatList.svelte';
+	import Search from '$components/FilterSearch.svelte';
 	let groupBy = 'category';
 
 	function groupByProperty(hats: Record<string, Hat>, prop: string) {
@@ -20,10 +20,18 @@
 
 	let groups: Record<string, Hat[]> = {};
 	$: groups = groupByProperty($hats, groupBy);
+
+	let showFilters = false;
 </script>
 
 <svelte:head>
 	<link rel="stylesheet" href="/i/hatIcons.css" />
 </svelte:head>
 
+<div class="max-w-4xl w-full">
+	<Search bind:showFilters />
+	{#if showFilters}
+		<div />
+	{/if}
+</div>
 <HatList {groups} />
