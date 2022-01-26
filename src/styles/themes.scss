@@ -9,7 +9,7 @@
 	--color-theme-toggle: #f5d67b;
 
 	// Code
-	--color-code: #{darken($color-bg, 2%)};
+	--color-code: #{$color-bg};
 
 	// Card
 	$color-card: $color-bg;
