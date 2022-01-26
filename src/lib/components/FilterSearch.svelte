@@ -1,15 +1,24 @@
 <script lang="ts">
+	import { createPopperActions } from 'svelte-popperjs';
+	import Tooltip from './Tooltip.svelte';
+
+	export let showFilters;
+	export let placeholder = 'Search...';
+
+	let inputEl: HTMLInputElement;
+
+	const [tooltipRef, tooltipContent] = createPopperActions();
+	let showTooltip = false;
+
+	let filterToggleText;
+	$: filterToggleText = showFilters ? 'Hide filters' : 'Show filters';
+
 	function onInputKeyDown(e: KeyboardEvent) {
 		if (e.key === 'Escape') {
 			e.preventDefault();
 			inputEl.value = '';
 		}
 	}
-
-	export let showFilters;
-	export let placeholder = 'Search...';
-
-	let inputEl: HTMLInputElement;
 </script>
 
 <div class="w-full relative">
@@ -22,7 +31,13 @@
 		bind:this={inputEl}
 		on:keydown={onInputKeyDown}
 	/>
-	<button on:click={() => (showFilters = !showFilters)} class="w-11 h-11 p-2 absolute right-0 top-0">
+	<button
+		use:tooltipRef
+		on:mouseenter={() => (showTooltip = true)}
+		on:mouseleave={() => (showTooltip = false)}
+		on:click={() => (showFilters = !showFilters)}
+		class="w-11 h-11 p-2 absolute right-0 top-0"
+	>
 		{#if showFilters}
 			<svg viewBox="0 0 24 24">
 				<path
@@ -39,4 +54,13 @@
 			</svg>
 		{/if}
 	</button>
+	{#if showTooltip}
+		<Tooltip
+			popperAction={tooltipContent}
+			popperOptions={{
+				placement: 'bottom',
+				modifiers: [{ name: 'offset', options: { offset: [0, 4] } }]
+			}}>{filterToggleText}</Tooltip
+		>
+	{/if}
 </div>
