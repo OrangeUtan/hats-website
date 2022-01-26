@@ -23,14 +23,16 @@ export interface Hat {
 
 export const hats: Writable<Record<string, Hat>> = writable({});
 
-export async function fetchHats(force = false): Promise<Record<string, Hat>> {
-	const currentVal = get(hats);
-	if (!force && !isEmptyObject(currentVal)) {
-		return currentVal;
-	}
-
+export async function updateHatData(
+	fetch: (input: RequestInfo, init?: RequestInit) => Promise<Response>
+): Promise<Response> {
 	const url = 'https://orangeutan.github.io/Hats/api/hats.json';
 	const res = await fetch(url);
+
+	if (!res.ok) {
+		return res;
+	}
+
 	const hatsJson: Record<string, HatJson> = await res.json();
 
 	const hatsData = Object.fromEntries(
@@ -46,7 +48,5 @@ export async function fetchHats(force = false): Promise<Record<string, Hat>> {
 	);
 
 	hats.set(hatsData);
-	return hatsData;
+	return res;
 }
-
-fetchHats();

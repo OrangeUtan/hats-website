@@ -1,5 +1,23 @@
+<script lang="ts" context="module">
+	/**
+	 * @type {import('@sveltejs/kit').Load}
+	 */
+	export async function load({ params, url, fetch, session, context }) {
+		const res = await updateHatData(fetch);
+
+		if (!res.ok) {
+			return {
+				status: res.status,
+				error: new Error(`Could not hat data`)
+			};
+		}
+
+		return {};
+	}
+</script>
+
 <script lang="ts">
-	import { Hat, hats } from '$stores/hats';
+	import { Hat, hats, updateHatData } from '$stores/hats';
 	import HatList from '$components/HatList.svelte';
 	import Search from '$components/FilterSearch.svelte';
 	let groupBy = 'category';

@@ -1,9 +1,5 @@
 <script context="module" lang="ts">
-	import { hats, fetchHats } from '$stores/hats';
-
 	export async function load({ params }) {
-		const hats = await fetchHats();
-
 		return {
 			props: {
 				hatType: params.type
