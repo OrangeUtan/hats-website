@@ -1,18 +1,15 @@
 <script lang="ts" context="module">
-	import { Hat, hats, updateHatData } from '$stores/hats';
+	import { Hat, hats, updateHats } from '$stores/hats';
 	import { fetchLanguage } from '$stores/language';
 
 	/**
 	 * @type {import('@sveltejs/kit').Load}
 	 */
 	export async function load({ params, url, fetch, session, context }) {
-		const hatsRes = await updateHatData(fetch);
-
-		if (!hatsRes.ok) {
-			return {
-				status: hatsRes.status,
-				error: new Error(`Could not hat data`)
-			};
+		try {
+			await updateHats(fetch);
+		} catch (e) {
+			return { error: e };
 		}
 
 		const langRes = await fetchLanguage(fetch, 'en_us');

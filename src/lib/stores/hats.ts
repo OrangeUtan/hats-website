@@ -23,18 +23,19 @@ export interface Hat {
 
 export const hats: Writable<Record<string, Hat>> = writable({});
 
-export async function updateHatData(fetch: FetchFunction): Promise<Response> {
+/** Fetch and parse hats JSON data **/
+async function fetchHats(fetch: FetchFunction): Promise<Record<string, Hat>> {
 	const url = 'https://orangeutan.github.io/Hats/api/hats.json';
 	const res = await fetch(url);
 
 	if (!res.ok) {
-		return res;
+		throw new Error(`Failed to load hats: ${res.status}`);
 	}
 
-	const hatsJson: Record<string, HatJson> = await res.json();
+	const json: Record<string, HatJson> = await res.json();
 
-	const hatsData = Object.fromEntries(
-		Object.entries(hatsJson).map(([type, hatJson]) => {
+	const parsedHatData = Object.fromEntries(
+		Object.entries(json).map(([type, hatJson]) => {
 			return [
 				type,
 				{
@@ -45,6 +46,23 @@ export async function updateHatData(fetch: FetchFunction): Promise<Response> {
 		})
 	);
 
-	hats.set(hatsData);
-	return res;
+	return parsedHatData;
+}
+
+/**
+ * Fetch hat data and update hat store.
+ * Uses cached value if available.
+ *
+ * @param force - Ignore cache and fetch regardless
+ * @return Current value of hats store
+ **/
+export async function updateHats(fetch: FetchFunction, force = false): Promise<Record<string, Hat>> {
+	const currentValue = get(hats);
+	if (!force && !isEmptyObject(currentValue)) {
+		return currentValue;
+	}
+
+	const newValue = await fetchHats(fetch);
+	hats.set(newValue);
+	return newValue;
 }
