@@ -11,7 +11,7 @@ gulp.task('spritesheets', function () {
 			imgName: 'hatIcons.png',
 			cssName: 'hatIcons.css',
 			imgPath: '/i/hatIcons.png',
-			cssTemplate: 'src/spritesheet.template.handlebars',
+			cssTemplate: 'scripts/spritesheet.template.handlebars',
 			cssHandlebarsHelpers: {
 				percentage: function (value, total) {
 					return value / total;
