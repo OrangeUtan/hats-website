@@ -16,11 +16,11 @@
 	<link rel="mask-icon" href="/i/squid.svg" color="blue" />
 </svelte:head>
 
-<header class="flex justify-center py-4 px-4">
+<header class="flex justify-center">
 	<NavBar />
 </header>
 
-<main class="flex flex-col items-center mx-4">
+<main class="flex flex-col items-center">
 	<slot />
 </main>
 
@@ -39,7 +39,7 @@
 	:global body {
 		--duration-theme: 150ms;
 
-		@apply h-full;
+		@apply h-full m-4;
 		@apply bg-bg text-on-bg;
 		@apply transition-colors duration-theme;
 	}
