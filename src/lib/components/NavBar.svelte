@@ -4,10 +4,10 @@
 </script>
 
 <nav class="flex justify-between w-full max-w-4xl">
-	<div class="flex flex-row items-center">
-		<a href="/" class="text-xl flex items-center mr-4">
+	<div class="section">
+		<a href="/" class="logo">
 			<svg
-				class="inline-block align-text-top bg-brand rounded p-2 w-11 h-11"
+				class="bg-brand rounded p-2 w-11 h-11"
 				viewBox="0 0 24 24"
 				xmlns="http://www.w3.org/2000/svg"
 				fill="currentColor"
@@ -17,17 +17,28 @@
 				/>
 			</svg>
 		</a>
-		<div class="uppercase">
-			<a sveltekit:prefetch href="/index">Index</a>
-		</div>
+		<ul>
+			<li>
+				<a sveltekit:prefetch href="/index">Index</a>
+			</li>
+		</ul>
 	</div>
-	<div class="flex gap-2 text-center">
+
+	<div class="section">
 		<LanguageSwitcher />
 		<ThemeToggle />
 	</div>
 </nav>
 
 <style lang="scss">
+	.logo {
+		@apply flex items-center;
+	}
+
+	.section {
+		@apply flex items-center gap-4;
+	}
+
 	// :global* {
 	// 	outline: 1px solid yellow;
 	// }
