@@ -4,8 +4,8 @@
 
 <svelte:head>
 	<title>Hats Datapack</title>
-	<link rel="icon" type="image/svg+xml" href="/i/squid.svg" />
-	<link rel="mask-icon" href="/i/squid.svg" color="blue" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="mask-icon" href="/i/favicon.svg" color="blue" />
 
 	<script>
 		// Prevent theme change flicker by setting it here early
