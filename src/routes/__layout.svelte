@@ -1,19 +1,25 @@
 <script lang="ts">
 	import NavBar from '$components/NavBar.svelte';
-	import { theme } from '$stores/theme';
-	import { onMount } from 'svelte';
-
-	onMount(() => {
-		if ($theme) {
-			document.documentElement.dataset.theme = $theme;
-		}
-	});
 </script>
 
 <svelte:head>
 	<title>Hats Datapack</title>
 	<link rel="icon" type="image/svg+xml" href="/i/squid.svg" />
 	<link rel="mask-icon" href="/i/squid.svg" color="blue" />
+
+	<script>
+		// Prevent theme change flicker by setting it here early
+		if ('theme' in localStorage) {
+			document.documentElement.dataset.theme = localStorage.theme;
+		} else {
+			if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.dataset.theme = 'dark';
+				localStorage.theme = 'dark';
+			} else {
+				document.documentElement.dataset.theme = 'light';
+			}
+		}
+	</script>
 </svelte:head>
 
 <header class="flex justify-center">
