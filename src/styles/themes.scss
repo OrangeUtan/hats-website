@@ -17,6 +17,8 @@
 	--color-txt-secondary: #{$txt-secondary};
 
 	// Border colors
+	$border-primary: darken($primary, 10%);
+	--color-border-primary: #{$border-primary};
 	$border-secondary: darken($primary, 10%);
 	--color-border-secondary: #{$border-secondary};
 
@@ -48,6 +50,8 @@
 	--color-t-secondary: #{$txt-secondary};
 
 	// Border colors
+	$border-primary: lighten($primary, 8%);
+	--color-border-primary: #{$border-primary};
 	$border-secondary: lighten($primary, 8%);
 	--color-border-secondary: #{$border-secondary};
 

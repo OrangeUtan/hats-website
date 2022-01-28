@@ -15,6 +15,7 @@ module.exports = {
 				'txt-secondary': 'var(--color-txt-secondary)',
 
 				// Border colors
+				'border-primary': 'var(--color-border-primary)',
 				'border-secondary': 'var(--color-border-secondary)',
 
 				// Skeleton

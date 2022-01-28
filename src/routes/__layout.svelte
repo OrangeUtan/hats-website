@@ -18,12 +18,12 @@
 	</script>
 </svelte:head>
 
-<div class="bg-primary max-w-4xl min-h-full px-6 py-2 mx-auto">
-	<header class="w-full">
+<div class="bg-primary max-w-4xl min-h-full mx-auto">
+	<header class="w-full px-6 py-3 border-b border-solid border-border-primary">
 		<NavBar />
 	</header>
 
-	<main class="w-full mt-8">
+	<main class="w-full mt-6 px-6">
 		<slot />
 	</main>
 </div>
