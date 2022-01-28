@@ -12,7 +12,7 @@
 
 <style lang="scss">
 	.card {
-		@apply border border-solid border-border-card rounded;
+		@apply border border-solid border-border-secondary rounded;
 		@apply bg-card text-on-card;
 		@apply flex flex-col items-center;
 

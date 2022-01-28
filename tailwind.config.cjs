@@ -4,22 +4,30 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				brand: 'var(--color-brand)',
-				bg: 'var(--color-bg)',
-				'on-bg': 'var(--color-on-bg)',
+				// Color theme
+				primary: 'var(--color-primary)',
+				secondary: 'var(--color-secondary)',
+				accent: 'var(--color-accent)',
+
+				// Text colors
+				'on-primary': 'var(--color-on-primary)',
+				'on-secondary': 'var(--color-on-secondary)',
+
+				// Border colors
+				'border-secondary': 'var(--color-border-secondary)',
+
+				// Card
 				card: 'var(--color-card)',
 				'on-card': 'var(--color-on-card)',
 				'card-title': 'var(--color-card-title)',
-				'border-card': 'var(--color-border-card)',
-				border: 'var(--color-border)',
-				'theme-toggle': 'var(--color-theme-toggle)',
-				code: 'var(--color-code)',
-				tooltip: 'var(--color-tooltip)',
-				'on-tooltip': 'var(--color-on-tooltip)',
-				'border-tooltip': 'var(--color-border-tooltip)',
-				divider: 'var(--color-divider)',
+
+				// Skeleton
 				skeleton: 'var(--color-skeleton)',
 				'skeleton-anim': 'var(--color-skeleton-anim)',
+
+				// Other
+				'theme-toggle': 'var(--color-theme-toggle)',
+				divider: 'var(--color-divider)',
 				'bg-search': 'var(--color-bg-search)'
 			},
 			transitionDuration: {

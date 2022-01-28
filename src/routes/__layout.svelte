@@ -42,7 +42,7 @@
 		--duration-theme: 100ms;
 
 		@apply h-full m-4;
-		@apply bg-bg text-on-bg;
+		@apply bg-primary text-on-primary;
 
 		* {
 			@apply transition-colors ease-linear duration-theme;

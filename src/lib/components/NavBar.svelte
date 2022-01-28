@@ -7,7 +7,7 @@
 	<div class="section">
 		<a href="/" class="logo">
 			<svg
-				class="bg-brand rounded p-2 w-11 h-11"
+				class="bg-accent rounded p-2 w-11 h-11"
 				viewBox="0 0 24 24"
 				xmlns="http://www.w3.org/2000/svg"
 				fill="currentColor"
