@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
 	import { Hat, hats, updateHats } from '$stores/hats';
-	import { setLanguage } from '$stores/language';
+	import { setLanguage, language } from '$stores/language';
 
 	/**
 	 * @type {import('@sveltejs/kit').Load}
@@ -22,6 +22,17 @@
 	import Search from '$components/FilterSearch.svelte';
 	let groupBy = 'category';
 
+	function filterHats(hats: Record<string, Hat>, value: string) {
+		let entries = Object.entries(hats);
+
+		// Filter by type and translated name
+		entries = entries.filter(([_, hat]) => {
+			return hat.type.toLowerCase().includes(value) || $language[hat.name].toLowerCase().includes(value);
+		});
+
+		return Object.fromEntries(entries);
+	}
+
 	function groupByProperty(hats: Record<string, Hat>, prop: string) {
 		return Object.entries(hats).reduce((prev, [type, hat]) => {
 			let keys: string[] = hat[prop];
@@ -36,10 +47,14 @@
 		}, {});
 	}
 
-	let groups: Record<string, Hat[]> = {};
-	$: groups = groupByProperty($hats, groupBy);
-
 	let showFilters = false;
+	let searchString = '';
+
+	let filteredHats: Record<string, Hat>;
+	$: filteredHats = filterHats($hats, searchString.toLowerCase());
+
+	let groups: Record<string, Hat[]>;
+	$: groups = groupByProperty(filteredHats, groupBy);
 </script>
 
 <svelte:head>
@@ -48,7 +63,7 @@
 </svelte:head>
 
 <div class="max-w-4xl w-full">
-	<Search bind:showFilters />
+	<Search bind:value={searchString} bind:showFilters />
 	{#if showFilters}
 		<div />
 	{/if}

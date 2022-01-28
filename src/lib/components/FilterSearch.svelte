@@ -5,8 +5,7 @@
 
 	export let showFilters;
 	export let placeholder = 'Search...';
-
-	let inputEl: HTMLInputElement;
+	export let value = '';
 
 	const [tooltipRef, tooltipContent] = createPopperActions();
 	let showTooltip = false;
@@ -21,9 +20,9 @@
 		type="text"
 		role="searchbox"
 		autocomplete="on"
-		{placeholder}
-		bind:this={inputEl}
 		use:clearOnKey={'Escape'}
+		{placeholder}
+		bind:value
 	/>
 	<button
 		use:tooltipRef
