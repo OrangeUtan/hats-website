@@ -23,7 +23,7 @@
 		<NavBar />
 	</header>
 
-	<main class="w-full mt-6 px-6">
+	<main class="w-full p-6">
 		<slot />
 	</main>
 </div>

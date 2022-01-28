@@ -14,7 +14,7 @@
 			<h1 class="text-xl text-left py-4 font-bold">
 				{groupName.trim().replace(/^\w/, (c) => c.toUpperCase())}
 			</h1>
-			<div class="grid gap-3 md:grid-cols-5 sm:grid-cols-4 grid-cols-3 ">
+			<div class="grid gap-3 md:grid-cols-5 sm:grid-cols-4 grid-cols-2 ">
 				{#each hats as hat}
 					<HatCard {hat} />
 				{/each}
