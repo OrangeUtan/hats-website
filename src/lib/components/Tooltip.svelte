@@ -17,7 +17,7 @@
 
 <style lang="scss">
 	.tooltip {
-		@apply bg-secondary text-on-secondary;
+		@apply bg-secondary text-txt-primary;
 		@apply border border-solid border-border-secondary shadow-md;
 
 		font-weight: bold;

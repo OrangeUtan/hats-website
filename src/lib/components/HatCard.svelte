@@ -7,17 +7,23 @@
 
 <a href={`/hat/${hat.type}`} class="card">
 	<i class={`hat-icon h-${hat.type} drop-shadow-md`} />
-	<h1 class="p-1 w-full text-center rounded-b bg-card-title">{$language[hat.name]}</h1>
+	<h1 class="title">{$language[hat.name]}</h1>
 </a>
 
 <style lang="scss">
 	.card {
-		@apply border border-solid border-border-secondary rounded;
-		@apply bg-card text-on-card;
+		@apply rounded;
+		@apply bg-secondary text-txt-primary;
 		@apply flex flex-col items-center;
+		@apply shadow-md;
 
-		box-shadow: 0 0.18rem 0.06rem -0.12rem rgba(0, 0, 0, 0.2), 0 0.12rem 0.12rem 0 rgba(0, 0, 0, 0.14),
-			0 0.06rem 0.28rem 0 rgba(0, 0, 0, 0.12);
+		.title {
+			@apply px-2 pb-3 w-full text-center rounded-b bg-secondary;
+		}
+
+		&:hover {
+			@apply shadow-lg;
+		}
 	}
 
 	// :global* {

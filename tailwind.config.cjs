@@ -10,16 +10,11 @@ module.exports = {
 				accent: 'var(--color-accent)',
 
 				// Text colors
-				'on-primary': 'var(--color-on-primary)',
-				'on-secondary': 'var(--color-on-secondary)',
+				'txt-primary': 'var(--color-txt-primary)',
+				'txt-secondary': 'var(--color-txt-secondary)',
 
 				// Border colors
 				'border-secondary': 'var(--color-border-secondary)',
-
-				// Card
-				card: 'var(--color-card)',
-				'on-card': 'var(--color-on-card)',
-				'card-title': 'var(--color-card-title)',
 
 				// Skeleton
 				skeleton: 'var(--color-skeleton)',
@@ -34,7 +29,7 @@ module.exports = {
 				theme: 'var(--duration-theme)'
 			},
 			borderRadius: {
-				DEFAULT: '.25rem'
+				DEFAULT: '.2rem'
 			}
 		}
 	}
