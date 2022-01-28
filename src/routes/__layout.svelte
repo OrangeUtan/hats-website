@@ -24,7 +24,7 @@
 	<NavBar />
 </header>
 
-<main class="flex flex-col items-center">
+<main class="flex flex-col items-center mt-8">
 	<slot />
 </main>
 

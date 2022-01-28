@@ -8,7 +8,7 @@
 	export let groups: Record<string, Hat[]>;
 </script>
 
-<div class="max-w-4xl w-full">
+<div>
 	{#if !isEmptyObject($language) && !isEmptyObject(groups)}
 		{#each Object.entries(groups) as [groupName, hats]}
 			<h1 class="text-xl text-left py-4">

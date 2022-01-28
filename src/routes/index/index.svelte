@@ -47,10 +47,10 @@
 	<title>Hat Index</title>
 </svelte:head>
 
-<div class="max-w-4xl w-full mt-8">
+<div class="max-w-4xl w-full">
 	<Search bind:showFilters />
 	{#if showFilters}
 		<div />
 	{/if}
+	<HatList {groups} />
 </div>
-<HatList {groups} />
