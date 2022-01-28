@@ -3,8 +3,6 @@
 </script>
 
 <svelte:head>
-	<title>Hats Datapack</title>
-
 	<script>
 		// Prevent theme change flicker by setting it here early
 		if ('theme' in localStorage) {
