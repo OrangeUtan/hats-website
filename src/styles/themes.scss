@@ -7,6 +7,8 @@
 	--color-secondary: #{$secondary};
 	$accent: #fb923c;
 	--color-accent: #{$accent};
+	$bg: lighten($accent, 25%);
+	--color-bg: #{$bg};
 
 	// Text colors
 	$txt-primary: #24292f;
@@ -32,10 +34,12 @@
 	// Color theme
 	$primary: #22272e;
 	--color-primary: #{$primary};
-	$secondary: lighten($primary, 4%);
+	$secondary: lighten($primary, 6%);
 	--color-secondary: #{$secondary};
 	$accent: #fb923c;
 	--color-accent: #{$accent};
+	$bg: #191d22;
+	--color-bg: #{$bg};
 
 	// Text colors
 	$txt-primary: #e9e9e9;

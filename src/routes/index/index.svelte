@@ -62,7 +62,7 @@
 	<title>Hat Index</title>
 </svelte:head>
 
-<div class="max-w-4xl w-full">
+<div>
 	<Search bind:value={searchString} bind:showFilters />
 	{#if showFilters}
 		<div />

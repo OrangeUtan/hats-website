@@ -18,13 +18,15 @@
 	</script>
 </svelte:head>
 
-<header class="flex justify-center">
-	<NavBar />
-</header>
+<div class="bg-primary max-w-4xl min-h-full px-6 py-2 mx-auto">
+	<header class="w-full">
+		<NavBar />
+	</header>
 
-<main class="flex flex-col items-center mt-8">
-	<slot />
-</main>
+	<main class="w-full mt-8">
+		<slot />
+	</main>
+</div>
 
 <style lang="scss">
 	@use 'src/styles/themes';
@@ -38,18 +40,18 @@
 		src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 	}
 
-	:global body {
+	:global html {
 		--duration-theme: 100ms;
 
-		@apply h-full m-4;
-		@apply bg-primary text-txt-primary;
+		@apply h-full bg-bg text-txt-primary;
+
+		body {
+			height: 100%;
+		}
 
 		* {
 			@apply transition-colors ease-linear duration-theme;
+			// outline: 1px solid yellow;
 		}
 	}
-
-	// :global* {
-	// 	outline: 1px solid yellow;
-	// }
 </style>
