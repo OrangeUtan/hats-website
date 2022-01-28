@@ -44,6 +44,7 @@
 
 <svelte:head>
 	<link rel="stylesheet" href="/i/hatIcons.css" />
+	<title>Hat Index</title>
 </svelte:head>
 
 <div class="max-w-4xl w-full mt-8">
