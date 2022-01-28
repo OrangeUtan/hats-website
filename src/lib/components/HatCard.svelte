@@ -15,7 +15,6 @@
 		@apply border border-solid border-border-card rounded;
 		@apply bg-card text-on-card;
 		@apply flex flex-col items-center;
-		@apply transition-colors duration-theme;
 
 		box-shadow: 0 0.18rem 0.06rem -0.12rem rgba(0, 0, 0, 0.2), 0 0.12rem 0.12rem 0 rgba(0, 0, 0, 0.14),
 			0 0.06rem 0.28rem 0 rgba(0, 0, 0, 0.12);

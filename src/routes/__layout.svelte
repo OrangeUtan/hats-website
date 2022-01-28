@@ -39,11 +39,14 @@
 	}
 
 	:global body {
-		--duration-theme: 150ms;
+		--duration-theme: 100ms;
 
 		@apply h-full m-4;
 		@apply bg-bg text-on-bg;
-		@apply transition-colors duration-theme;
+
+		* {
+			@apply transition-colors ease-linear duration-theme;
+		}
 	}
 
 	// :global* {
