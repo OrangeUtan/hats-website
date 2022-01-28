@@ -26,6 +26,7 @@
 		border-radius: 4px;
 		height: fit-content;
 		width: fit-content;
+		z-index: 1;
 	}
 
 	.arrow,
