@@ -9,3 +9,7 @@ node_modules
 .pnpm-debug.log
 yarn.lock
 package-lock.json
+
+# Local Netlify folder
+.netlify
+out-null
