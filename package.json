@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
-    "prebuild": "[[ $CI = true ]] && npx pnpm install --store=node_modules/.pnpm-store || echo skipping pnpm install",
     "build": "svelte-kit build",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
@@ -17,7 +16,7 @@
   "devDependencies": {
     "@playwright/test": "^1.22.2",
     "@sveltejs/adapter-auto": "next",
-    "@sveltejs/adapter-netlify": "1.0.0-next.66",
+    "@sveltejs/adapter-netlify": "1.0.0-next.65",
     "@sveltejs/kit": "next",
     "@typescript-eslint/eslint-plugin": "^5.27.0",
     "@typescript-eslint/parser": "^5.27.0",
