@@ -3,6 +3,7 @@
   import Menu from 'svelte-material-icons/Menu.svelte';
   import Github from 'svelte-material-icons/Github.svelte';
   import ThemeIcon from 'svelte-material-icons/ThemeLightDark.svelte';
+  import ThemeToggle from '$components/ThemeToggle.svelte';
 </script>
 
 <div class="drawer">
@@ -35,9 +36,7 @@
       </div>
 
       <div class="navbar-end">
-        <div class="btn btn-ghost btn-square">
-          <ThemeIcon size="1.5em" />
-        </div>
+        <ThemeToggle />
         <a
           href="https://github.com/OrangeUtan/Hats"
           target="_blank"
