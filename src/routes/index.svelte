@@ -1,6 +1,8 @@
 <script lang="ts">
   import Logo from '$components/Icons/Logo.svelte';
   import Menu from 'svelte-material-icons/Menu.svelte';
+  import Github from 'svelte-material-icons/Github.svelte';
+  import ThemeIcon from 'svelte-material-icons/ThemeLightDark.svelte';
 </script>
 
 <div class="drawer">
@@ -9,30 +11,41 @@
     <div class="navbar">
       <div class="navbar-start">
         <!-- Logo desktop -->
-        <a class="btn btn-ghost normal-case text-xl hidden lg:flex" href="/">
+        <a class="btn btn-ghost normal-case text-xl hidden md:flex" href="/">
           <Logo size="1.5em" />
           <p class="ml-2">Hats</p>
         </a>
 
         <!-- Menu desktop -->
-        <ul class="menu menu-horizontal p-0 hidden lg:flex">
+        <ul class="menu menu-horizontal p-0 hidden md:flex">
           <li><a href="/index">Index</a></li>
         </ul>
 
         <!-- Menu mobile -->
-        <label for="my-drawer-3" class="btn btn-square btn-ghost lg:hidden">
+        <label for="my-drawer-3" class="btn btn-square btn-ghost md:hidden">
           <Menu size="2em" />
         </label>
       </div>
 
       <div class="navbar-center">
         <!-- Logo mobile -->
-        <a class="btn btn-ghost normal-case text-xl lg:hidden" href="/">
+        <a class="btn btn-ghost btn-square normal-case text-xl md:hidden -m-8" href="/">
           <Logo size="1.5em" />
         </a>
       </div>
 
-      <div class="navbar-end" />
+      <div class="navbar-end">
+        <div class="btn btn-ghost btn-square">
+          <ThemeIcon size="1.5em" />
+        </div>
+        <a
+          href="https://github.com/OrangeUtan/Hats"
+          target="_blank"
+          class="btn btn-ghost btn-square"
+        >
+          <Github size="1.5em" />
+        </a>
+      </div>
     </div>
 
     <!-- Page content here -->
