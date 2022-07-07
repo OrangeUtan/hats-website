@@ -8,6 +8,9 @@
 - Dark mode
   - [nicobachner: Sveltekit theme switch](https://nicobachner.com/sveltekit-theme-switch)
   - [davidwparker: Darkmode in Sveltekit without Javascript](https://www.davidwparker.com/posts/dark-mode-in-sveltekit-with-and-without-javascript)
+- SvelteKit path alias
+  - [Svelte Kit Import with custom Alias from '$alias/..."](https://www.youtube.com/watch?v=aRCzQSo08XM)
+  - [Make Pathing Easier with Aliases in SvelteKit](https://codingcat.dev/post/make-pathing-easier-with-aliases-in-sveltekit)
 
 ## UI Inspiration
 
