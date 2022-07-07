@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let cls: string;
+  export let cls = '';
 </script>
 
 <div class={`${cls}`} />
