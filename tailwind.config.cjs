@@ -9,8 +9,8 @@ const config = {
       {
         light: {
           ...require('daisyui/src/colors/themes')['[data-theme=light]'],
-          primary: '#edb12b',
-          secondary: '#f64669',
+          primary: '#ffa726',
+          secondary: '#c62828',
           'primary-content': '#f8f8f8'
         },
         dark: {
