@@ -1,16 +1,7 @@
 <script lang="ts">
   import LanguageIcon from 'svelte-material-icons/Translate.svelte';
   import ChevronDownIcon from 'svelte-material-icons/ChevronDown.svelte';
-
-  let languages = [
-    { code: 'de', icon: '🇩🇪', name: 'German' },
-    { code: 'en', icon: '🇬🇧', name: 'English' }
-  ];
-  let selectedLanguage = 'de';
-
-  function setLanguage(code: string) {
-    selectedLanguage = code;
-  }
+  import { language, languages, setLanguage } from '$stores/lang';
 </script>
 
 <div class="dropdown dropdown-end">
@@ -24,9 +15,9 @@
     tabindex="0"
     class="dropdown-content menu menu-compact p-3 shadow-2xl bg-base-100 rounded-box w-56 text-base-content"
   >
-    {#each languages as { code, icon, name }}
+    {#each Object.values(languages) as { code, icon, name }}
       <li>
-        <button class:active={selectedLanguage === code} on:click={() => setLanguage(code)}>
+        <button class:active={$language.code === code} on:click={() => setLanguage(code)}>
           <p class="text-xl">{icon}</p>
           {name}
         </button>
