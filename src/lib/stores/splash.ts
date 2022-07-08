@@ -3,8 +3,8 @@ import { writable } from 'svelte/store';
 const splash_texts = [
   "Gotta Get 'Em All",
   'Take your pet for a walk',
-  'Pantastic headgear',
-  '5/7 Opticians approve'
+  'Pantastic headgear 🍳',
+  '5/7 Opticians approve 🕶️'
 ].sort(() => 0.5 - Math.random());
 let current_splash_idx = 0;
 

@@ -1,7 +1,8 @@
 <script lang="ts">
   import Logo from '$components/Icons/Logo.svelte';
-  import Menu from 'svelte-material-icons/Menu.svelte';
-  import Github from 'svelte-material-icons/Github.svelte';
+  import MenuIcon from 'svelte-material-icons/Menu.svelte';
+  import GithubIcon from 'svelte-material-icons/Github.svelte';
+  import LanguageSelect from '$components/LanguageSelect.svelte';
   import ThemeToggle from '$components/ThemeToggle.svelte';
   import Splash from '$components/Splash.svelte';
 </script>
@@ -24,7 +25,7 @@
 
         <!-- Menu mobile -->
         <label for="my-drawer-3" class="btn btn-square btn-ghost md:hidden">
-          <Menu size="2em" />
+          <MenuIcon size="2em" />
         </label>
       </div>
 
@@ -36,6 +37,7 @@
       </div>
 
       <div class="navbar-end">
+        <LanguageSelect />
         <ThemeToggle />
         <div class="flex justify-center items-center tooltip tooltip-bottom text" data-tip="GitHub">
           <a
@@ -44,13 +46,13 @@
             class="btn btn-ghost btn-square"
             data-tip="Github"
           >
-            <Github size="1.5em" />
+            <GithubIcon size="1.5em" />
           </a>
         </div>
       </div>
     </div>
     <div
-      class="w-full pt-16 bg-gradient-to-br from-primary to-secondary text-primary-content grid place-items-center items-end"
+      class="w-full h-full pt-16 bg-gradient-to-br from-primary to-secondary text-primary-content grid place-items-center items-end"
     >
       <div class="hero-content flex-col">
         <h1 class="text-4xl font-extrabold">Hats</h1>
