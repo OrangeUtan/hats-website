@@ -2,7 +2,7 @@
   import AutoIcon from 'svelte-material-icons/ThemeLightDark.svelte';
   import LightIcon from 'svelte-material-icons/WhiteBalanceSunny.svelte';
   import DarkIcon from 'svelte-material-icons/WeatherNight.svelte';
-  import { slide, fly } from 'svelte/transition';
+  import { fly } from 'svelte/transition';
 
   enum Theme {
     AUTO,
@@ -26,14 +26,23 @@
         break;
     }
   }
+
+  let duration = 300;
+  let offset = 15;
 </script>
 
-<div transition:fly={{ y: 200, duration: 2000 }} class="btn btn-ghost btn-square" on:click={toggle}>
+<div class="btn btn-ghost btn-square" on:click={toggle}>
   {#if theme === Theme.AUTO}
-    <AutoIcon {size} />
+    <div in:fly={{ y: -offset, duration }} out:fly={{ y: offset, duration }} class="absolute">
+      <AutoIcon {size} />
+    </div>
   {:else if theme === Theme.LIGHT}
-    <LightIcon {size} />
+    <div in:fly={{ y: -offset, duration }} out:fly={{ y: offset, duration }} class="absolute">
+      <LightIcon {size} />
+    </div>
   {:else if theme === Theme.DARK}
-    <DarkIcon {size} />
+    <div in:fly={{ y: -offset, duration }} out:fly={{ y: offset, duration }} class="absolute">
+      <DarkIcon {size} />
+    </div>
   {/if}
 </div>
