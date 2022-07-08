@@ -1,4 +1,5 @@
 - [svelte-add](https://www.npmjs.com/package/svelte-add) (community tool to easily add functionality to svelte apps)
+- [Generate SVG waves](https://getwaves.io/)
 - Netlify
   - [Netlify CLI](https://docs.netlify.com/cli/get-started/)
   - [Netlify LFS setup](https://docs.netlify.com/large-media/setup/)
