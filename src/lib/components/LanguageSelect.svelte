@@ -5,7 +5,7 @@
 </script>
 
 <div class="dropdown dropdown-end">
-  <div tabindex="0" class="btn btn-ghost m1">
+  <div tabindex="0" class="btn btn-ghost btn-square">
     <LanguageIcon size="1.5em" />
     <div class="hidden sm:inline-block">
       <ChevronDownIcon size="1.5em" />

@@ -7,7 +7,8 @@ const config = {
   resolve: {
     alias: {
       $components: path.resolve('src/lib/components'),
-      $data: path.resolve('src/lib/data')
+      $data: path.resolve('src/lib/data'),
+      $func: path.resolve('src/lib/functions')
     }
   }
 };
