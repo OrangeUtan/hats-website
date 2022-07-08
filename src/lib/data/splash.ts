@@ -2,7 +2,8 @@ import { writable } from 'svelte/store';
 
 const splash_texts = [
   "Gotta Get 'Em All",
-  'Take your pet for a walk',
+  'Take your 🐕‍🦺 for a walk',
+  'Take your 🐈 for a walk',
   'Pantastic headgear 🍳',
   '5/7 Opticians approve 🕶️'
 ].sort(() => 0.5 - Math.random());

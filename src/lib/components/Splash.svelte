@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { splash_text, next_splash } from '$stores/splash';
+  import { splash_text, next_splash } from '$data/splash';
   import Typewriter from 'svelte-typewriter';
 </script>
 

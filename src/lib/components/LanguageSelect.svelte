@@ -1,7 +1,7 @@
 <script lang="ts">
   import LanguageIcon from 'svelte-material-icons/Translate.svelte';
   import ChevronDownIcon from 'svelte-material-icons/ChevronDown.svelte';
-  import { language, languages, setLanguage } from '$stores/lang';
+  import { language, languages, setLanguage } from '$data/lang';
 </script>
 
 <div class="dropdown dropdown-end">
