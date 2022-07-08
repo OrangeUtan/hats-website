@@ -10,8 +10,13 @@
     DARK
   }
 
-  let size = '1.5em';
   let theme = Theme.AUTO;
+  let tooltip = '';
+  updateTooltip(theme);
+
+  let size = '1.5em';
+  let duration = 300;
+  let offset = 15;
 
   function toggle() {
     switch (theme) {
@@ -25,24 +30,38 @@
         theme = Theme.AUTO;
         break;
     }
+    updateTooltip(theme);
   }
 
-  let duration = 300;
-  let offset = 15;
+  function updateTooltip(theme: Theme) {
+    switch (theme) {
+      case Theme.AUTO:
+        tooltip = 'Change Theme: Dark';
+        break;
+      case Theme.DARK:
+        tooltip = 'Change Theme: Light';
+        break;
+      case Theme.LIGHT:
+        tooltip = 'Change Theme: Auto';
+        break;
+    }
+  }
 </script>
 
-<div class="btn btn-ghost btn-square" on:click={toggle}>
-  {#if theme === Theme.AUTO}
-    <div in:fly={{ y: -offset, duration }} out:fly={{ y: offset, duration }} class="absolute">
-      <AutoIcon {size} />
-    </div>
-  {:else if theme === Theme.LIGHT}
-    <div in:fly={{ y: -offset, duration }} out:fly={{ y: offset, duration }} class="absolute">
-      <LightIcon {size} />
-    </div>
-  {:else if theme === Theme.DARK}
-    <div in:fly={{ y: -offset, duration }} out:fly={{ y: offset, duration }} class="absolute">
-      <DarkIcon {size} />
-    </div>
-  {/if}
+<div class="flex justify-center items-center tooltip tooltip-bottom text" data-tip={tooltip}>
+  <div class="btn btn-ghost btn-square" on:click={toggle}>
+    {#if theme === Theme.AUTO}
+      <div class="absolute" in:fly={{ y: -offset, duration }} out:fly={{ y: offset, duration }}>
+        <AutoIcon {size} />
+      </div>
+    {:else if theme === Theme.LIGHT}
+      <div class="absolute" in:fly={{ y: -offset, duration }} out:fly={{ y: offset, duration }}>
+        <LightIcon {size} />
+      </div>
+    {:else if theme === Theme.DARK}
+      <div class="absolute" in:fly={{ y: -offset, duration }} out:fly={{ y: offset, duration }}>
+        <DarkIcon {size} />
+      </div>
+    {/if}
+  </div>
 </div>
