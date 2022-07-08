@@ -37,13 +37,16 @@
 
       <div class="navbar-end">
         <ThemeToggle />
-        <a
-          href="https://github.com/OrangeUtan/Hats"
-          target="_blank"
-          class="btn btn-ghost btn-square"
-        >
-          <Github size="1.5em" />
-        </a>
+        <div class="flex justify-center items-center tooltip tooltip-bottom text" data-tip="GitHub">
+          <a
+            href="https://github.com/OrangeUtan/Hats"
+            target="_blank"
+            class="btn btn-ghost btn-square"
+            data-tip="Github"
+          >
+            <Github size="1.5em" />
+          </a>
+        </div>
       </div>
     </div>
 
