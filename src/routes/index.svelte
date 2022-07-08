@@ -9,7 +9,7 @@
 <div class="drawer">
   <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content">
-    <div class="navbar fixed text-primary-content">
+    <div class="navbar fixed z-50 text-primary-content">
       <div class="navbar-start">
         <!-- Logo desktop -->
         <a class="btn btn-ghost normal-case text-xl hidden md:flex" href="/">
