@@ -21,6 +21,7 @@ specifiers:
   svelte-check: ^2.7.1
   svelte-material-icons: ^2.0.2
   svelte-preprocess: ^4.10.7
+  svelte-typewriter: 3.0.0-beta.0
   tailwindcss: ^3.1.4
   tslib: ^2.3.1
   typescript: ^4.7.2
@@ -49,6 +50,7 @@ devDependencies:
   svelte: 3.49.0
   svelte-check: 2.8.0_blrkfmplrezk6jx3arz7bdc3pa
   svelte-preprocess: 4.10.7_6avtyouqcdws46kxwsvk4vhxre
+  svelte-typewriter: 3.0.0-beta.0_svelte@3.49.0
   tailwindcss: 3.1.5
   tslib: 2.4.0
   typescript: 4.7.4
@@ -2098,6 +2100,14 @@ packages:
       strip-indent: 3.0.0
       svelte: 3.49.0
       typescript: 4.7.4
+    dev: true
+
+  /svelte-typewriter/3.0.0-beta.0_svelte@3.49.0:
+    resolution: {integrity: sha512-HW9UGcKko2V9dsRCJBf3AIc+trICVSWqASxu5OnnOMay1ZJ+827+jaSEcFZEMVy+0XwMXv0uBwM/69kovJFNEg==}
+    peerDependencies:
+      svelte: '>=3.47.x'
+    dependencies:
+      svelte: 3.49.0
     dev: true
 
   /svelte/3.49.0:

@@ -3,7 +3,7 @@
   import Menu from 'svelte-material-icons/Menu.svelte';
   import Github from 'svelte-material-icons/Github.svelte';
   import ThemeToggle from '$components/ThemeToggle.svelte';
-  import { splash_text, next_splash } from '$stores/splash';
+  import Splash from '$components/Splash.svelte';
 </script>
 
 <div class="drawer">
@@ -54,9 +54,7 @@
     >
       <div class="hero-content flex-col">
         <h1 class="text-4xl font-extrabold">Hats</h1>
-        <h2 class="text-2xl font-extrabold select-none cursor-pointer" on:click={next_splash}>
-          {$splash_text}
-        </h2>
+        <Splash />
       </div>
       <svg class="fill-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
