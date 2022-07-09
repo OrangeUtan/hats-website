@@ -4,8 +4,12 @@ const splash_texts = [
   "Gotta Get 'Em All",
   'Take your 🐕‍🦺 for a walk',
   'Take your 🐈 for a walk',
-  'Pantastic headgear 🍳',
-  '5/7 Opticians approve 🕶️'
+  'Pantastic armor 🍳',
+  '5/7 Opticians approve 🕶️',
+  'Arrowdynamic advantage 🏹',
+  'One size fits all 👕',
+  'One size fits all 👗',
+  'One size fits all 👘'
 ].sort(() => 0.5 - Math.random());
 let current_splash_idx = 0;
 
