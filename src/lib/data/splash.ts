@@ -12,5 +12,6 @@ let current_splash_idx = 0;
 export const splash_text = writable(splash_texts[current_splash_idx]);
 
 export function next_splash() {
-  splash_text.set(splash_texts[current_splash_idx++ % splash_texts.length]);
+  current_splash_idx = (current_splash_idx + 1) % splash_texts.length;
+  splash_text.set(splash_texts[current_splash_idx]);
 }
