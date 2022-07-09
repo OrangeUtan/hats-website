@@ -5,6 +5,7 @@
   import LanguageSelect from '$components/LanguageSelect.svelte';
   import ThemeToggle from '$components/ThemeToggle.svelte';
   import Splash from '$components/Splash.svelte';
+  import Wave from '$components/Wave.svelte';
 </script>
 
 <div class="drawer">
@@ -52,17 +53,13 @@
       </div>
     </div>
     <div
-      class="w-full h-full pt-16 bg-gradient-to-br from-primary to-secondary text-primary-content grid place-items-center items-end"
+      class="w-full h-full pt-16 bg-gradient-to-br from-primary to-secondary text-primary-content grid items-end"
     >
-      <div class="hero-content flex-col">
+      <div class="hero-content flex-col w-full pb-40">
         <h1 class="text-4xl font-extrabold">Hats</h1>
         <Splash />
       </div>
-      <svg class="fill-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          d="M0,192L48,197.3C96,203,192,213,288,224C384,235,480,245,576,234.7C672,224,768,192,864,186.7C960,181,1056,203,1152,192C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-        />
-      </svg>
+      <Wave cls="fill-secondary" />
     </div>
   </div>
   <div class="drawer-side">
