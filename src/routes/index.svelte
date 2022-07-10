@@ -1,10 +1,10 @@
 <script lang="ts">
-  import Logo from '$components/Icons/Logo.svelte';
+  import Logo from '$components/Logo/Logo.svelte';
   import MenuIcon from 'svelte-material-icons/Menu.svelte';
   import GithubIcon from 'svelte-material-icons/Github.svelte';
   import LanguageSelect from '$components/LanguageSelect.svelte';
   import ThemeToggle from '$components/ThemeToggle.svelte';
-  import Splash from '$components/Splash.svelte';
+  import Splash from '$components/Splash/Splash.svelte';
   import Wave from '$components/Wave.svelte';
 </script>
 

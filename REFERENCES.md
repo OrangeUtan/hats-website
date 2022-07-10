@@ -13,6 +13,11 @@
 - SvelteKit path alias
   - [Svelte Kit Import with custom Alias from '$alias/..."](https://www.youtube.com/watch?v=aRCzQSo08XM)
   - [Make Pathing Easier with Aliases in SvelteKit](https://codingcat.dev/post/make-pathing-easier-with-aliases-in-sveltekit)
+- Storybook:
+  - [Fix for ERR_REQUIRE_ESM](https://github.com/storybookjs/storybook/issues/15675#issuecomment-930143142)
+  - [Integrating Storybook with SvelteKit](https://www.youtube.com/watch?v=Kc1ULlfyUcw&t=1191s)
+  - [storStoreV7 incompatible with Svelte](https://github.com/storybookjs/storybook/discussions/18216)
+  - [Vite alias in storybook](https://github.com/storybookjs/storybook/issues/14952#issuecomment-862043558)
 
 ## UI Inspiration
 
