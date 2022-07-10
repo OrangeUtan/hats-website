@@ -9,4 +9,5 @@
   <Wave {...args} />
 </Template>
 
+<Story name="Primary" args={{ cls: 'fill-primary' }} />
 <Story name="Secondary" args={{ cls: 'fill-secondary' }} />
