@@ -8,7 +8,9 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/addon-docs',
-    '@storybook/addon-svelte-csf'
+    '@storybook/addon-svelte-csf',
+    '@storybook/addon-a11y',
+    '@storybook/addon-queryparams'
   ],
   framework: '@storybook/svelte',
   core: {
