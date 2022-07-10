@@ -2,10 +2,10 @@
   import Logo from '$components/Logo/Logo.svelte';
   import MenuIcon from 'svelte-material-icons/Menu.svelte';
   import GithubIcon from 'svelte-material-icons/Github.svelte';
-  import LanguageSelect from '$components/LanguageSelect.svelte';
+  import LanguageSelect from '$components/LanguageSelect/LanguageSelect.svelte';
   import ThemeToggle from '$components/ThemeToggle.svelte';
   import Splash from '$components/Splash/Splash.svelte';
-  import Wave from '$components/Wave.svelte';
+  import Wave from '$components/Wave/Wave.svelte';
 </script>
 
 <div class="drawer">
