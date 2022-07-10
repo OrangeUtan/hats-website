@@ -1,4 +1,5 @@
 const { mergeConfig } = require('vite');
+const sveltePreprocess = require('svelte-preprocess');
 
 module.exports = {
   stories: ['../src/**/*.stories.@(js|jsx|ts|tsx|svelte|mdx)'],
@@ -6,14 +7,29 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    '@storybook/addon-docs'
+    '@storybook/addon-docs',
+    '@storybook/addon-svelte-csf'
   ],
   framework: '@storybook/svelte',
   core: {
     builder: '@storybook/builder-vite'
   },
   svelteOptions: {
-    preprocess: import('../svelte.config.js').preprocess
+    preprocess: mergeConfig(
+      import('../svelte.config.js').preprocess,
+      sveltePreprocess({
+        presets: [
+          '@babel/preset-env',
+          {
+            loose: true,
+            modules: false,
+            targets: {
+              esmodules: true
+            }
+          }
+        ]
+      })
+    )
   },
   async viteFinal(config) {
     return mergeConfig(config, {
@@ -21,5 +37,11 @@ module.exports = {
         alias: (await import('../vite.config.js')).default.resolve.alias
       }
     });
+  },
+  typescript: {
+    reactDocgen: 'react-docgen-typescript'
+  },
+  features: {
+    storyStoreV7: false
   }
 };

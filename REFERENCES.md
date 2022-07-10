@@ -20,6 +20,7 @@
   - [Vite alias in storybook](https://github.com/storybookjs/storybook/issues/14952#issuecomment-862043558)
   - MDX only works with `@mdx-js/react@1.x.x`
   - [Possible solution for @mdx-js/react@2.x.x](https://github.com/storybookjs/storybook/issues/17455#issuecomment-1127390304)
+  - Add typescript support: [SvelteKit using TS, and Storybook setup](https://www.youtube.com/watch?v=L4F5dSu0FcQ)
 
 ## UI Inspiration
 
