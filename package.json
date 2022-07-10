@@ -23,7 +23,6 @@
     "@storybook/addon-links": "^6.5.9",
     "@storybook/addon-measure": "^6.5.9",
     "@storybook/addon-outline": "^6.5.9",
-    "@storybook/addon-postcss": "^2.0.0",
     "@storybook/addon-svelte-csf": "^2.0.5",
     "@storybook/addons": ">=6.5.9",
     "@storybook/api": ">=6.5.9",
