@@ -1,7 +1,7 @@
-const path = require('path');
+const { mergeConfig } = require('vite');
 
 module.exports = {
-  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx|svelte)'],
+  stories: ['../src/**/*.stories.@(js|jsx|ts|tsx|svelte|mdx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -15,12 +15,10 @@ module.exports = {
     preprocess: import('../svelte.config.js').preprocess
   },
   async viteFinal(config) {
-    config.resolve.alias = {
-      $components: path.resolve('src/lib/components'),
-      $data: path.resolve('src/lib/data'),
-      $func: path.resolve('src/lib/functions')
-    };
-
-    return config;
+    return mergeConfig(config, {
+      resolve: {
+        alias: (await import('../vite.config.js')).default.resolve.alias
+      }
+    });
   }
 };
