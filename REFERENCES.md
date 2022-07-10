@@ -18,6 +18,8 @@
   - [Integrating Storybook with SvelteKit](https://www.youtube.com/watch?v=Kc1ULlfyUcw&t=1191s)
   - [storStoreV7 incompatible with Svelte](https://github.com/storybookjs/storybook/discussions/18216)
   - [Vite alias in storybook](https://github.com/storybookjs/storybook/issues/14952#issuecomment-862043558)
+  - MDX only works with `@mdx-js/react@1.x.x`
+  - [Possible solution for @mdx-js/react@2.x.x](https://github.com/storybookjs/storybook/issues/17455#issuecomment-1127390304)
 
 ## UI Inspiration
 

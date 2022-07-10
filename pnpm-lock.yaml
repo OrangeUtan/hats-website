@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@babel/core': ^7.18.6
+  '@mdx-js/react': ^1.0.0
   '@storybook/addon-actions': ^6.5.9
   '@storybook/addon-backgrounds': ^6.5.9
   '@storybook/addon-docs': ^6.5.9
@@ -59,11 +60,9 @@ specifiers:
   vite: ^2.9.13
   webpack: ^5.73.0
 
-dependencies:
-  svelte-material-icons: 2.0.2_svelte@3.49.0
-
 devDependencies:
   '@babel/core': 7.18.6
+  '@mdx-js/react': 1.6.22_react@16.14.0
   '@storybook/addon-actions': 6.5.9_wcqkhtmu7mswc6yz4uyexck3ty
   '@storybook/addon-backgrounds': 6.5.9_wcqkhtmu7mswc6yz4uyexck3ty
   '@storybook/addon-docs': 6.5.9_z3bdmswqhnb5t2fpwezlgkitfe
@@ -112,6 +111,7 @@ devDependencies:
   svelte: 3.49.0
   svelte-check: 2.8.0_z7c7wmnxh6uyucetlwtz46a4ae
   svelte-loader: 3.1.3_svelte@3.49.0
+  svelte-material-icons: 2.0.2_svelte@3.49.0
   svelte-preprocess: 4.10.7_unfpvumxjnsvgli44tlzfolybu
   svelte-typewriter: 3.0.0-beta.0_svelte@3.49.0
   tailwindcss: 3.1.5
@@ -11662,7 +11662,7 @@ packages:
       svelte: ^3.0.0
     dependencies:
       svelte: 3.49.0
-    dev: false
+    dev: true
 
   /svelte-preprocess/4.10.7_unfpvumxjnsvgli44tlzfolybu:
     resolution: {integrity: sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw==}
@@ -11729,6 +11729,7 @@ packages:
   /svelte/3.49.0:
     resolution: {integrity: sha512-+lmjic1pApJWDfPCpUUTc1m8azDqYCG1JN9YEngrx/hUyIcFJo6VZhj0A1Ai0wqoHcEIuQy+e9tk+4uDgdtsFA==}
     engines: {node: '>= 8'}
+    dev: true
 
   /sveltedoc-parser/4.1.0:
     resolution: {integrity: sha512-m+NUJaKvVIySRnI19ujYEptxIOHwVvTU2GLKZBVqVQ+zZCrOv/H2F4VtRcjhNKQ/Vd+r7WakxfuUTGxNNdMU3A==}
