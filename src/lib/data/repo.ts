@@ -2,12 +2,12 @@ import type { RestEndpointMethodTypes } from '@octokit/plugin-rest-endpoint-meth
 import { writable } from 'svelte/store';
 import type { Writable } from 'svelte/store';
 
+export type ReleaseInfo = RestEndpointMethodTypes['repos']['getLatestRelease']['response']['data'];
+
 const owner = 'OrangeUtan';
 const repo = 'Hats';
 
-export async function fetchLatestRelease(
-  fetch: Fetch
-): Promise<RestEndpointMethodTypes['repos']['getLatestRelease']['response']['data']> {
+export async function fetchLatestRelease(fetch: Fetch): Promise<ReleaseInfo> {
   const r = await fetch(`https://api.github.com/repos/${owner}/${repo}/releases/latest`);
   return await r.json();
 }
