@@ -13,10 +13,10 @@
       <!-- Logo desktop -->
       <a class="btn btn-ghost hidden md:flex" href="/">
         <Logo cls="h-6" />
-        <p class="ml-2 normal-case text-2xl">Hats</p>
+        <p class="ml-1 normal-case text-xl font-title font-thin">Hats</p>
       </a>
       <a
-        class="link link-hover text-xs tooltip tooltip-bottom hidden md:block"
+        class="link link-hover text-xs font-mono tooltip tooltip-bottom hidden md:block"
         data-tip="Changelog"
         href="https://github.com/OrangeUtan/Hats/releases"
         target="_blank"

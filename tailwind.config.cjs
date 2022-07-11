@@ -1,8 +1,12 @@
 const config = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
-
   theme: {
-    extend: {}
+    extend: {},
+    fontFamily: {
+      title: ['Minecrafter', 'sans-serif'],
+      'title-alt': ['Minecrafter Alt', 'sans-serif'],
+      mono: ['ui-monospace', 'SFMono-Regular', 'Monaco', 'Consolas', 'Courier New', 'monospace']
+    }
   },
   daisyui: {
     themes: [

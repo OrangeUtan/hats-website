@@ -27,7 +27,7 @@
     >
       <div id="hero-content" class="p-16 grid items-start gap-8 flex-col">
         <div>
-          <h1 class="text-8xl font-bold">HATS</h1>
+          <h1 class="text-8xl font-title">hats</h1>
           <Splash cls="text-3xl font-extrabold" />
         </div>
         <FeaturesList />

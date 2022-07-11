@@ -2,3 +2,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Minecrafter';
+    src: local('Minecrafter'), url('/fonts/Minecrafter.Reg.woff') format('woff'),
+      url('/fonts/Minecrafter.Reg.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Minecrafter Alt';
+    src: local('Minecrafter Alt'), url('/fonts/Minecrafter.Alt.woff') format('woff'),
+      url('/fonts/Minecrafter.Alt.woff2') format('woff2');
+  }
+}
