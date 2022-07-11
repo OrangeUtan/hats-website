@@ -12,7 +12,7 @@
     <div class="flex items-center gap-2">
       <!-- Logo desktop -->
       <a class="btn btn-ghost hidden md:flex" href="/">
-        <Logo size="2rem" />
+        <Logo cls="h-6" />
         <p class="ml-2 normal-case text-2xl">Hats</p>
       </a>
       <a
@@ -39,7 +39,7 @@
 
     <!-- Logo mobile -->
     <a class="btn btn-ghost btn-square normal-case text-xl md:hidden -m-8" href="/">
-      <Logo size="1.5em" />
+      <Logo cls="h-6" />
     </a>
   </div>
 

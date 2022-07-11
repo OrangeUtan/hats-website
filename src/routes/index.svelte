@@ -14,6 +14,7 @@
   import Splash from '$components/Splash/Splash.svelte';
   import Wave from '$components/Wave/Wave.svelte';
   import AppBar from '$components/AppBar/AppBar.svelte';
+  import FeaturesList from '$components/FeaturesList/FeaturesList.svelte';
 </script>
 
 <div class="drawer">
@@ -21,13 +22,17 @@
   <div class="drawer-content">
     <AppBar />
     <div
-      class="w-full h-full pt-16 bg-gradient-to-br from-primary to-secondary text-primary-content grid items-end"
+      id="hero"
+      class="w-full h-full pt-16 grid items-start bg-gradient-to-br from-primary to-secondary text-primary-content"
     >
-      <div class="hero-content flex-col w-full pb-40">
-        <h1 class="text-4xl font-extrabold">Hats</h1>
-        <Splash />
+      <div id="hero-content" class="p-16 grid items-start gap-8 flex-col">
+        <div>
+          <h1 class="text-8xl font-bold">HATS</h1>
+          <Splash cls="text-3xl font-extrabold" />
+        </div>
+        <FeaturesList />
       </div>
-      <Wave cls="fill-secondary" />
+      <Wave cls="fill-secondary self-end" />
     </div>
   </div>
   <div class="drawer-side">
