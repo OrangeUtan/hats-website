@@ -14,4 +14,4 @@
   <AppBar />
 </Template>
 
-<Story name="Default" />
+<Story name="Default" parameters={{ layout: 'fullscreen' }} />

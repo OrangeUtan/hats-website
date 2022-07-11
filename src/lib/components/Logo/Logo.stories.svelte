@@ -9,4 +9,4 @@
   <Logo {...args} />
 </Template>
 
-<Story name="Default" args={{ size: '1rem' }} />
+<Story name="Default" args={{ size: '1rem' }} parameters={{ layout: 'centered' }} />

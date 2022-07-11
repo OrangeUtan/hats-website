@@ -6,9 +6,7 @@
 <Meta title="LanguageSelect" component={LanguageSelect} />
 
 <Template let:args>
-  <div class="flex w-full justify-center">
-    <LanguageSelect {...args} />
-  </div>
+  <LanguageSelect {...args} />
 </Template>
 
-<Story name="Default" />
+<Story name="Default" parameters={{ layout: 'centered' }} />
