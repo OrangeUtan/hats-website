@@ -3,7 +3,7 @@
   import Logo from './Logo.svelte';
 </script>
 
-<Meta title="Logo" component={Logo} />
+<Meta title="Icons/Logo" component={Logo} />
 
 <Template let:args>
   <Logo {...args} />

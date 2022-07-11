@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Logo from '$components/Logo/Logo.svelte';
+  import Logo from '$components/Icons/Logo/Logo.svelte';
   import MenuIcon from 'svelte-material-icons/Menu.svelte';
   import GithubIcon from 'svelte-material-icons/Github.svelte';
   import LanguageSelect from '$components/LanguageSelect/LanguageSelect.svelte';
