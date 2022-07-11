@@ -39,6 +39,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.27.0
   autoprefixer: ^10.4.7
   babel-loader: ^8.2.5
+  cross-env: ^7.0.3
   daisyui: ^2.18.0
   eslint: ^8.16.0
   eslint-config-prettier: ^8.3.0
@@ -103,6 +104,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.30.5_4x5o4skxv6sl53vpwefgt23khm
   autoprefixer: 10.4.7_postcss@8.4.14
   babel-loader: 8.2.5_fswvdo7jykdwhfxrdcvghfn6pa
+  cross-env: 7.0.3
   daisyui: 2.18.1_ugi4xkrfysqkt4c4y6hkyfj344
   eslint: 8.19.0
   eslint-config-prettier: 8.5.0_eslint@8.19.0
@@ -5985,6 +5987,14 @@ packages:
       prop-types: 15.8.1
       react: 16.14.0
       warning: 4.0.3
+    dev: true
+
+  /cross-env/7.0.3:
+    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
+    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
+    hasBin: true
+    dependencies:
+      cross-spawn: 7.0.3
     dev: true
 
   /cross-spawn/6.0.5:

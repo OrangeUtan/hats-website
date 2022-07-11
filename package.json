@@ -10,7 +10,7 @@
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --check --plugin-search-dir=. . && eslint .",
     "format": "prettier --write --plugin-search-dir=. .",
-    "storybook": "pnpm start-storybook -p 6006",
+    "storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider pnpm start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
@@ -52,6 +52,7 @@
     "@typescript-eslint/parser": "^5.27.0",
     "autoprefixer": "^10.4.7",
     "babel-loader": "^8.2.5",
+    "cross-env": "^7.0.3",
     "daisyui": "^2.18.0",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.3.0",
