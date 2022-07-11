@@ -19,10 +19,10 @@
 <div class="drawer">
   <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content">
+    <AppBar />
     <div
       class="w-full h-full pt-16 bg-gradient-to-br from-primary to-secondary text-primary-content grid items-end"
     >
-      <AppBar />
       <div class="hero-content flex-col w-full pb-40">
         <h1 class="text-4xl font-extrabold">Hats</h1>
         <Splash />

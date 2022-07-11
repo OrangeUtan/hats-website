@@ -9,19 +9,21 @@
 
 <div class="navbar fixed z-50 text-primary-content">
   <div class="navbar-start">
-    <!-- Logo desktop -->
-    <a class="btn btn-ghost normal-case text-xl hidden md:flex" href="/">
-      <Logo size="1.5em" />
-      <p class="ml-2">Hats</p>
-    </a>
-    <a
-      class="link link-hover text-xs tooltip tooltip-bottom hidden md:block"
-      data-tip="Changelog"
-      href="https://github.com/OrangeUtan/Hats/releases"
-      target="_blank"
-    >
-      {$latestRelease.tag_name}
-    </a>
+    <div class="flex items-center gap-2">
+      <!-- Logo desktop -->
+      <a class="btn btn-ghost hidden md:flex" href="/">
+        <Logo size="2rem" />
+        <p class="ml-2 normal-case text-2xl">Hats</p>
+      </a>
+      <a
+        class="link link-hover text-xs tooltip tooltip-bottom hidden md:block"
+        data-tip="Changelog"
+        href="https://github.com/OrangeUtan/Hats/releases"
+        target="_blank"
+      >
+        {$latestRelease.tag_name}
+      </a>
+    </div>
 
     <!-- Menu mobile -->
     <label for="my-drawer-3" class="btn btn-square btn-ghost md:hidden">

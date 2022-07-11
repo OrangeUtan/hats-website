@@ -9,4 +9,4 @@
   <Splash {...args} />
 </Template>
 
-<Story name="Default" parameters={{ layout: 'centered' }} />
+<Story name="Splash" parameters={{ layout: 'centered' }} />

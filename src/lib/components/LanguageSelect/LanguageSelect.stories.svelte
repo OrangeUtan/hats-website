@@ -9,4 +9,4 @@
   <LanguageSelect {...args} />
 </Template>
 
-<Story name="Default" parameters={{ layout: 'centered' }} />
+<Story name="LanguageSelect" parameters={{ layout: 'centered' }} />

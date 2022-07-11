@@ -15,4 +15,4 @@
   <ThemeToggle {...args} />
 </Template>
 
-<Story name="Default" parameters={{ layout: 'centered' }} />
+<Story name="ThemeToggle" parameters={{ layout: 'centered' }} />
