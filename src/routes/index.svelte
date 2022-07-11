@@ -1,3 +1,13 @@
+<script lang="ts" context="module">
+  import { fetchLatestRelease, latestRelease } from '$data/repo';
+
+  /** @type {import('./__types/[slug]').Load} */
+  export async function load({ params, fetch, session, stuff }) {
+    latestRelease.set(await fetchLatestRelease(fetch));
+    return {};
+  }
+</script>
+
 <script lang="ts">
   import Logo from '$components/Logo/Logo.svelte';
   import MenuIcon from 'svelte-material-icons/Menu.svelte';
@@ -6,6 +16,8 @@
   import ThemeToggle from '$components/ThemeToggle/ThemeToggle.svelte';
   import Splash from '$components/Splash/Splash.svelte';
   import Wave from '$components/Wave/Wave.svelte';
+
+  console.log($latestRelease);
 </script>
 
 <div class="drawer">
@@ -18,11 +30,14 @@
           <Logo size="1.5em" />
           <p class="ml-2">Hats</p>
         </a>
-
-        <!-- Menu desktop -->
-        <ul class="menu menu-horizontal p-0 hidden md:flex">
-          <li><a href="/index">Index</a></li>
-        </ul>
+        <a
+          class="link link-hover text-xs tooltip tooltip-bottom"
+          data-tip="Changelog"
+          href="https://github.com/OrangeUtan/Hats/releases"
+          target="_blank"
+        >
+          {$latestRelease.tag_name}
+        </a>
 
         <!-- Menu mobile -->
         <label for="my-drawer-3" class="btn btn-square btn-ghost md:hidden">
@@ -31,6 +46,11 @@
       </div>
 
       <div class="navbar-center">
+        <!-- Menu desktop -->
+        <ul class="menu menu-horizontal p-0 hidden md:flex">
+          <li><a href="/index">Index</a></li>
+        </ul>
+
         <!-- Logo mobile -->
         <a class="btn btn-ghost btn-square normal-case text-xl md:hidden -m-8" href="/">
           <Logo size="1.5em" />

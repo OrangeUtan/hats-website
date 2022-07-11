@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@babel/core': ^7.18.6
   '@mdx-js/react': ^1.0.0
+  '@octokit/plugin-rest-endpoint-methods': ^6.0.0
   '@storybook/addon-a11y': ^6.5.9
   '@storybook/addon-actions': ^6.5.9
   '@storybook/addon-backgrounds': ^6.5.9
@@ -66,6 +67,7 @@ specifiers:
 devDependencies:
   '@babel/core': 7.18.6
   '@mdx-js/react': 1.6.22_react@16.14.0
+  '@octokit/plugin-rest-endpoint-methods': 6.0.0
   '@storybook/addon-a11y': 6.5.9_wcqkhtmu7mswc6yz4uyexck3ty
   '@storybook/addon-actions': 6.5.9_wcqkhtmu7mswc6yz4uyexck3ty
   '@storybook/addon-backgrounds': 6.5.9_wcqkhtmu7mswc6yz4uyexck3ty
@@ -2045,6 +2047,26 @@ packages:
     dependencies:
       mkdirp: 1.0.4
       rimraf: 3.0.2
+    dev: true
+
+  /@octokit/openapi-types/12.8.0:
+    resolution: {integrity: sha512-ydcKLs2KKcxlhpdWLzJxEBDEk/U5MUeqtqkXlrtAUXXFPs6vLl1PEGghFC/BbpleosB7iXs0Z4P2DGe7ZT5ZNg==}
+    dev: true
+
+  /@octokit/plugin-rest-endpoint-methods/6.0.0:
+    resolution: {integrity: sha512-9LkEvZB3WDuayEI381O5A/eM3QQioBZrwymQp5CUCNz9UMP/yZAIqBjcPhVJJFA3IRkKO1EARo98OePt9i0rkQ==}
+    engines: {node: '>= 14'}
+    peerDependencies:
+      '@octokit/core': '>=3'
+    dependencies:
+      '@octokit/types': 6.39.0
+      deprecation: 2.3.1
+    dev: true
+
+  /@octokit/types/6.39.0:
+    resolution: {integrity: sha512-Mq4N9sOAYCitTsBtDdRVrBE80lIrMBhL9Jbrw0d+j96BAzlq4V+GLHFJbHokEsVvO/9tQupQdoFdgVYhD2C8UQ==}
+    dependencies:
+      '@octokit/openapi-types': 12.8.0
     dev: true
 
   /@popperjs/core/2.11.5:
@@ -6229,6 +6251,10 @@ packages:
   /depd/2.0.0:
     resolution: {integrity: sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==}
     engines: {node: '>= 0.8'}
+    dev: true
+
+  /deprecation/2.3.1:
+    resolution: {integrity: sha512-xmHIy4F3scKVwMsQ4WnVaS8bHOx0DmVwRywosKhaILI0ywMDWPtBSku2HNxRvF7jtwDRsoEwYQSfbxj8b7RlJQ==}
     dev: true
 
   /des.js/1.0.1:
