@@ -1,11 +1,13 @@
 <script lang="ts" context="module">
+  import type { Load } from '@sveltejs/kit';
   import { fetchLatestRelease, latestRelease } from '$data/repo';
 
-  /** @type {import('./__types/[slug]').Load} */
-  export async function load({ params, fetch, session, stuff }) {
+  /** @type {import('@sveltejs/kit').Load} */
+  export const load: Load = async ({ fetch }) => {
     latestRelease.set(await fetchLatestRelease(fetch));
+
     return {};
-  }
+  };
 </script>
 
 <script lang="ts">
