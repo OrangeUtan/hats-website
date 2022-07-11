@@ -35,9 +35,7 @@ module.exports = {
   },
   async viteFinal(config) {
     return mergeConfig(config, {
-      resolve: {
-        alias: (await import('../vite.config.js')).default.resolve.alias
-      }
+      resolve: (await import('../vite.config.js')).default.resolve
     });
   },
   typescript: {
