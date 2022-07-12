@@ -11,8 +11,7 @@
     "strict": true,
     "paths": {
       "$components/*": ["src/components/*"],
-      "$data/*": ["src/lib/data/*"],
-      "$func/*": ["src/lib/functions/*"]
+      "$data/*": ["src/data/*"]
     },
     "baseUrl": "."
   }
