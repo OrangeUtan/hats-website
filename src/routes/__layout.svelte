@@ -1,11 +1,10 @@
 <script lang="ts" context="module">
   import type { Load } from '@sveltejs/kit';
-  import { fetchLatestRelease, latestRelease } from '$data/repo';
+  import { latestRelease } from '$data/repo';
 
   /** @type {import('@sveltejs/kit').Load} */
   export const load: Load = async ({ fetch }) => {
-    latestRelease.set(await fetchLatestRelease(fetch));
-
+    await latestRelease.fetch_data(fetch);
     return {};
   };
 </script>
