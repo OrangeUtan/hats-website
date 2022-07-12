@@ -19,7 +19,10 @@ const config = {
       // Split your app into multiple functions instead of creating a single one for the entire app.
       // if `edge` is true, this option cannot be used
       split: false
-    })
+    }),
+    files: {
+      assets: 'src/assets'
+    }
   }
 };
 
