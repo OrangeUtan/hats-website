@@ -25,7 +25,7 @@
       id="hero"
       class="w-full h-full pt-16 grid items-start bg-gradient-to-br from-primary to-secondary text-primary-content"
     >
-      <div id="hero-content" class="p-16 grid items-start gap-8 flex-col">
+      <div id="hero-content" class="p-16 grid items-start gap-8 flex-col z-10">
         <div>
           <h1 class="text-8xl font-title">hats</h1>
           <Splash cls="text-3xl font-extrabold" />
