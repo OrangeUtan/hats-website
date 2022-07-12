@@ -16,6 +16,6 @@
 
 <style>
   div {
-    min-height: 2.3rem;
+    min-height: 3rem;
   }
 </style>
