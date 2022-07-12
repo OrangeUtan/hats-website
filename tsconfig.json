@@ -10,7 +10,7 @@
     "sourceMap": true,
     "strict": true,
     "paths": {
-      "$components/*": ["src/lib/components/*"],
+      "$components/*": ["src/components/*"],
       "$data/*": ["src/lib/data/*"],
       "$func/*": ["src/lib/functions/*"]
     },

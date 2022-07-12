@@ -16,7 +16,7 @@
     <FeaturesList />
     <div class="flex gap-4">
       <a class="btn btn-accent" href="/install">Install</a>
-      <a class="btn btn-secondary" href="/hats">Browse Hats</a>
+      <a class="btn btn-secondary" href="/hats">DOCS</a>
     </div>
   </div>
   <Wave cls="fill-secondary self-end" />
