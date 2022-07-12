@@ -14,8 +14,11 @@ const config = {
         light: {
           ...require('daisyui/src/colors/themes')['[data-theme=light]'],
           primary: '#ffa726',
-          secondary: '#c62828',
-          'primary-content': '#ffffff'
+          'primary-content': '#ffffff',
+          secondary: '#eb460a',
+          'secondary-content': '#ffffff',
+          accent: '#7572cb',
+          'accent-content': '#ffffff'
         },
         dark: {
           ...require('daisyui/src/colors/themes')['[data-theme=dark]']
