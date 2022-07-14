@@ -1,6 +1,8 @@
 - [svelte-add](https://www.npmjs.com/package/svelte-add) (community tool to easily add functionality to svelte apps)
 - [Generate SVG waves](https://getwaves.io/)
 - [Material UI color palette tool](https://material.io/resources/color/)
+- Tailwind:
+  - [JIT mode](https://v2.tailwindcss.com/docs/just-in-time-mode)
 - Fonts:
   - [ttf to woff](https://cloudconvert.com/ttf-to-woff)
   - [Load fonts from /static directory](https://stackoverflow.com/a/70400854/10196606)
