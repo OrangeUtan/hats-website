@@ -4,32 +4,31 @@ const config = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   darkMode: ['[data-mode="dark"]'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: 'var(--primary)',
+        'primary-content': 'var(--primary-content)',
+        secondary: 'var(--secondary)',
+        'secondary-content': 'var(--secondary-content)',
+        accent: 'var(--accent)',
+        'accent-content': 'var(--accent-content)',
+        neutral: 'var(--neutral)',
+        'neutral-content': 'var(--neutral-content)',
+        'base-100': 'var(--base-100)',
+        'base-200': 'var(--base-200)',
+        'base-300': 'var(--base-300)',
+        info: 'var(--info)',
+        success: 'var(--success)',
+        warning: 'var(--warning)',
+        error: 'var(--error)'
+      }
+    },
     fontFamily: {
       title: ['Minecrafter', 'sans-serif'],
       'title-alt': ['Minecrafter Alt', 'sans-serif'],
       mono: ['ui-monospace', 'SFMono-Regular', 'Monaco', 'Consolas', 'Courier New', 'monospace']
     }
   },
-  daisyui: {
-    themes: [
-      {
-        light: {
-          ...require('daisyui/src/colors/themes')['[data-theme=light]'],
-          primary: '#ffa726',
-          'primary-content': '#ffffff',
-          secondary: '#eb460a',
-          'secondary-content': '#ffffff',
-          accent: '#7572cb',
-          'accent-content': '#ffffff'
-        },
-        dark: {
-          ...require('daisyui/src/colors/themes')['[data-theme=dark]']
-        }
-      }
-    ]
-  },
-
   plugins: [require('daisyui')]
 };
 

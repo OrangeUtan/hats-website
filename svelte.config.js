@@ -10,7 +10,6 @@ const config = {
       postcss: true
     })
   ],
-
   kit: {
     adapter: adapter({
       // Create a Netlify Edge Function rather than using standard Node-based functions

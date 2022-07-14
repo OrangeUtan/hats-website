@@ -10,7 +10,7 @@
 </script>
 
 <script lang="ts">
-  import '../app.css';
+  import '../styles/app.scss';
   import AppBar from '$components/AppBar/AppBar.svelte';
 </script>
 
