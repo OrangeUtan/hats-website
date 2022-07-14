@@ -2,6 +2,7 @@ const config = {
   mode: 'jit',
   purge: ['./src/**/*.svelte'],
   content: ['./src/**/*.{html,js,svelte,ts}'],
+  darkMode: ['[data-mode="dark"]'],
   theme: {
     extend: {},
     fontFamily: {
