@@ -1,29 +1,98 @@
-// Light theme (also acts as fallback theme)
+@function to_hsl_string($color) {
+  @return floor(hue($color)) floor(saturation($color)) floor(lightness($color));
+}
+
+@mixin theme-light {
+  --p: #{to_hsl_string(#ffa726)}; /* primary */
+  --pc: #{to_hsl_string(#ffffff)}; /* primary-content */
+
+  --s: #{to_hsl_string(#eb460a)}; /* secondary */
+  --sf: #{to_hsl_string(#c93e0c)}; /* secondary-focused */
+  --sc: #{to_hsl_string(#ffffff)}; /* secondary-content */
+
+  --a: #{to_hsl_string(#7572cb)}; /* accent */
+  --af: #{to_hsl_string(#5754b6)}; /* accent-focused */
+  --ac: #{to_hsl_string(#ffffff)}; /* accent-content */
+
+  --n: #{to_hsl_string(#3d4451)}; /* neutral */
+  --nf: #{to_hsl_string(#2f343e)}; /* neutral-focused */
+  --nc: #{to_hsl_string(#ffffff)}; /* neutral-content */
+
+  --b1: #{to_hsl_string(#ffffff)}; /* base-100 */
+  --b2: #{to_hsl_string(#f2f2f2)}; /* base-200 */
+  --b3: #{to_hsl_string(#e5e6e6)}; /* base-300  */
+  --bc: #{to_hsl_string(#1f2937)}; /* base-content */
+
+  --in: #{to_hsl_string(#2563eb)}; /* info */
+  --inc: #{to_hsl_string(#ffffff)}; /* info-content */
+
+  --su: #{to_hsl_string(#16a34a)}; /* success */
+  --suc: #{to_hsl_string(#ffffff)}; /* success-content */
+
+  --wa: #{to_hsl_string(#d97706)}; /* warning */
+  --wac: #{to_hsl_string(#ffffff)}; /* warning-content */
+
+  --er: #{to_hsl_string(#dc2626)}; /* error */
+  --erc: #{to_hsl_string(#ffffff)}; /* error-content */
+}
+
+@mixin theme-dark {
+  --p: #{to_hsl_string(blue)};
+  --pc: #{to_hsl_string(#ffffff)};
+
+  --s: #{to_hsl_string(#eb460a)};
+  --sf: #{to_hsl_string(#c93e0c)};
+  --sc: #{to_hsl_string(#ffffff)};
+
+  --a: #{to_hsl_string(#7572cb)};
+  --af: #{to_hsl_string(#5754b6)};
+  --ac: #{to_hsl_string(#ffffff)};
+
+  --n: #{to_hsl_string(#3d4451)};
+  --nf: #{to_hsl_string(#2f343e)};
+  --nc: #{to_hsl_string(#ffffff)};
+
+  --b1: #{to_hsl_string(#ffffff)};
+  --b2: #{to_hsl_string(#f2f2f2)};
+  --b3: #{to_hsl_string(#e5e6e6)};
+  --bc: #{to_hsl_string(#1f2937)};
+
+  --in: #{to_hsl_string(#2563eb)};
+  --inc: #{to_hsl_string(#ffffff)};
+
+  --su: #{to_hsl_string(#16a34a)};
+  --suc: #{to_hsl_string(#ffffff)};
+
+  --wa: #{to_hsl_string(#d97706)};
+  --wac: #{to_hsl_string(#ffffff)};
+
+  --er: #{to_hsl_string(#dc2626)};
+  --erc: #{to_hsl_string(#ffffff)};
+}
+
 :root {
-  $primary: #ffa726;
-  --primary: #{$primary};
-  --p: #{$primary};
+  --rounded-box: 1rem;
+  --rounded-btn: 0.3rem;
+  --rounded-badge: 1.9rem;
+  --animation-btn: 0.25s;
+  --animation-input: 0.2s;
+  --btn-text-case: normal;
+  --btn-focus-scale: 0.95;
+  --border-btn: 0;
+  --tab-border: 1px;
+  --tab-radius: 0.5rem;
+}
 
-  $primary-content: #ffffff;
-  --primary-content: #{$primary-content};
-  --pc: #{$primary-content};
+[data-theme] {
+  @include theme-light();
+}
 
-  --secondary: #eb460a;
-  --secondary-content: #ffffff;
-  --accent: #7572cb;
-  --accent-content: #ffffff;
-  --neutral: #3d4451;
-  --neutral-content: #ffffff;
-  --base-100: #ffffff;
-  --base-200: #f2f2f2;
-  --base-300: #e5e6e6;
-  --base-content: #1f2937;
-  --info: #2563eb;
-  --info-content: #ffffff;
-  --success: #16a34a;
-  --success-content: #ffffff;
-  --warning: #d97706;
-  --warning-content: #ffffff;
-  --error: #dc2626;
-  --error-content: #ffffff;
+[data-theme='dark'] {
+  @include theme-dark();
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include theme-dark();
+  }
 }
