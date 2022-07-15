@@ -1,7 +1,8 @@
 .DS_Store
 node_modules
-/build
-/.svelte-kit
+build
+.svelte-kit/*/*
+
 /package
 .env
 .env.*
@@ -13,3 +14,6 @@ package-lock.json
 # Local Netlify folder
 .netlify
 out-null
+
+# Exceptions
+!.svelte-kit\tsconfig.json
