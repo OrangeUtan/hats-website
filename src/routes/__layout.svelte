@@ -13,9 +13,11 @@
   import '../styles/app.scss';
   import AppBar from '$components/AppBar/AppBar.svelte';
   import { theme } from '$data/theme';
+  import { language_code } from '$data/lang';
 
   $: if (typeof document !== 'undefined') {
     document.documentElement.dataset.theme = $theme;
+    document.documentElement.lang = $language_code;
   }
 </script>
 

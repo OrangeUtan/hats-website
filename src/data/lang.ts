@@ -1,4 +1,5 @@
-import { writable } from 'svelte/store';
+import { persistentAtom } from '@nanostores/persistent';
+import { derived } from 'svelte/store';
 
 enum LanguageCode {
   DE = 'de',
@@ -18,8 +19,7 @@ export const languages: Record<LanguageCode, Language> = {
   'zh-Hant': { code: LanguageCode.ZH_HANT, icon: '🇨🇳', native_name: '繁體中文' }
 };
 
-export const language = writable(languages[LanguageCode.DE]);
-
-export function setLanguage(code: LanguageCode) {
-  language.set(languages[code]);
-}
+export const language_code = persistentAtom<LanguageCode>('language', LanguageCode.EN);
+export const language = derived(language_code, ($language_code) => {
+  languages[$language_code];
+});

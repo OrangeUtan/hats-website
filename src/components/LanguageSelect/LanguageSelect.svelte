@@ -1,7 +1,7 @@
 <script lang="ts">
   import LanguageIcon from 'svelte-material-icons/Translate.svelte';
   import ChevronDownIcon from 'svelte-material-icons/ChevronDown.svelte';
-  import { language, languages, setLanguage } from '$data/lang';
+  import { language_code, languages } from '$data/lang';
 </script>
 
 <div class="dropdown dropdown-end">
@@ -17,7 +17,7 @@
   >
     {#each Object.values(languages) as { code, icon, native_name }}
       <li>
-        <button class:active={$language.code === code} on:click={() => setLanguage(code)}>
+        <button class:active={$language_code === code} on:click={() => language_code.set(code)}>
           <p class="text-xl">{icon}</p>
           {native_name}
         </button>
