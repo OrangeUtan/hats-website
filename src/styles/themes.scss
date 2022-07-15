@@ -3,19 +3,26 @@
 }
 
 @mixin theme-light {
-  --p: #{to_hsl_string(#ffa726)}; /* primary */
+  $focus_darken_amount: 6%;
+
+  $primary: #ffa726;
+  --p: #{to_hsl_string($primary)}; /* primary */
+  --pf: #{to_hsl_string(darken($primary, $focus_darken_amount))};
   --pc: #{to_hsl_string(#ffffff)}; /* primary-content */
 
-  --s: #{to_hsl_string(#eb460a)}; /* secondary */
-  --sf: #{to_hsl_string(#c93e0c)}; /* secondary-focused */
+  $secondary: #eb460a;
+  --s: #{to_hsl_string($secondary)}; /* secondary */
+  --sf: #{to_hsl_string(darken($secondary, $focus_darken_amount))}; /* secondary-focused */
   --sc: #{to_hsl_string(#ffffff)}; /* secondary-content */
 
-  --a: #{to_hsl_string(#7572cb)}; /* accent */
-  --af: #{to_hsl_string(#5754b6)}; /* accent-focused */
+  $accent: #7572cb;
+  --a: #{to_hsl_string($accent)}; /* accent */
+  --af: #{to_hsl_string(darken($accent, $focus_darken_amount))}; /* accent-focused */
   --ac: #{to_hsl_string(#ffffff)}; /* accent-content */
 
-  --n: #{to_hsl_string(#3d4451)}; /* neutral */
-  --nf: #{to_hsl_string(#2f343e)}; /* neutral-focused */
+  $neutral: #3d4451;
+  --n: #{to_hsl_string($neutral)}; /* neutral */
+  --nf: #{to_hsl_string(darken($neutral, $focus_darken_amount))}; /* neutral-focused */
   --nc: #{to_hsl_string(#ffffff)}; /* neutral-content */
 
   --b1: #{to_hsl_string(#ffffff)}; /* base-100 */
@@ -37,20 +44,27 @@
 }
 
 @mixin theme-dark {
-  --p: #{to_hsl_string(blue)};
+  $focus_darken_amount: 6%;
+
+  $primary: blue;
+  --p: #{to_hsl_string($primary)};
+  --pf: #{to_hsl_string(darken($primary, $focus_darken_amount))};
   --pc: #{to_hsl_string(#ffffff)};
 
-  --s: #{to_hsl_string(#eb460a)};
-  --sf: #{to_hsl_string(#c93e0c)};
+  $secondary: #eb460a;
+  --s: #{to_hsl_string($secondary)};
+  --sf: #{to_hsl_string(darken($secondary, $focus_darken_amount))};
   --sc: #{to_hsl_string(#ffffff)};
 
-  --a: #{to_hsl_string(#7572cb)};
-  --af: #{to_hsl_string(#5754b6)};
+  $accent: #7572cb;
+  --a: #{to_hsl_string($accent)};
+  --af: #{to_hsl_string(darken($accent, $focus_darken_amount))};
   --ac: #{to_hsl_string(#ffffff)};
 
-  --n: #{to_hsl_string(#3d4451)};
-  --nf: #{to_hsl_string(#2f343e)};
-  --nc: #{to_hsl_string(#ffffff)};
+  $neutral: #3d4451;
+  --n: #{to_hsl_string($neutral)}; /* neutral */
+  --nf: #{to_hsl_string(darken($neutral, $focus_darken_amount))}; /* neutral-focused */
+  --nc: #{to_hsl_string(#ffffff)}; /* neutral-content */
 
   --b1: #{to_hsl_string(#ffffff)};
   --b2: #{to_hsl_string(#f2f2f2)};
