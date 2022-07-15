@@ -97,16 +97,17 @@
   --tab-radius: 0.5rem;
 }
 
-[data-theme] {
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include theme-dark();
+  }
+}
+
+:root,
+[data-theme='light'] {
   @include theme-light();
 }
 
 [data-theme='dark'] {
   @include theme-dark();
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    @include theme-dark();
-  }
 }
