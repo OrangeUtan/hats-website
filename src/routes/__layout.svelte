@@ -12,7 +12,19 @@
 <script lang="ts">
   import '../styles/app.scss';
   import AppBar from '$components/AppBar/AppBar.svelte';
+  import { theme } from '$data/theme';
+
+  $: if (typeof document !== 'undefined') {
+    document.documentElement.dataset.theme = $theme;
+  }
 </script>
+
+<svelte:head>
+  <script>
+    // Loads theme from local storage as fast as possible to prevent flicker
+    document.documentElement.dataset.theme = localStorage.theme || 'auto';
+  </script>
+</svelte:head>
 
 <div class="drawer">
   <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
