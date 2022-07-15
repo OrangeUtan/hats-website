@@ -2,7 +2,12 @@
   import Splash from '$components/Splash/Splash.svelte';
   import Wave from '$components/Wave/Wave.svelte';
   import FeaturesList from '$components/FeaturesList/FeaturesList.svelte';
+  import Button from '$components/Button/Button.svelte';
 </script>
+
+<svelte:head>
+  <title>Hats Datapack</title>
+</svelte:head>
 
 <div
   id="hero"
@@ -15,8 +20,8 @@
     </div>
     <FeaturesList />
     <div class="flex gap-4">
-      <a class="btn btn-accent" href="/install">Install</a>
-      <a class="btn btn-secondary" href="/hats">DOCS</a>
+      <Button class="btn-accent" href="/install">Install</Button>
+      <Button class="btn-secondary" href="/hats">Browse</Button>
     </div>
   </div>
   <Wave cls="fill-secondary self-end" />
